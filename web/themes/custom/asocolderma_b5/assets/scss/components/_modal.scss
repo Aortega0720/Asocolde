@@ -1,0 +1,303 @@
+.login-dialog{
+    background: hex-to-rgba(color(grayscale,white),.95);
+    border:0;
+    width: 100%!important;
+    top: 0!important;
+    .ui-dialog-buttonpane ,
+    .ui-dialog-titlebar {
+        display: none;
+    }
+    .ui-dialog-content{
+        min-height: 100vh!important;
+    }
+    .modal-login-top{
+        display: flex;
+        font-size: 1.3rem;
+        justify-content: center;
+        flex-direction: column;
+        .field--name-field-image{
+            margin-bottom: 1rem;
+            img{
+                display: block;
+                height: auto;
+                max-width: 300px;
+            }
+        }
+        .btn-link {
+            border:1px solid color(secondary,500);
+            color:color(secondary,500);
+            font-size: 1.3rem;
+            line-height: 3.2rem;
+            text-decoration: none;
+            padding: 0 1.6rem;
+            &:hover,
+            &:focus{
+                background:color(secondary,500);
+                color:color(grayscale,white);
+            }
+            &.icn-back{
+                &:before{
+                    content: "\e921";
+                    font-family: $font-icon;
+                }
+            }
+        }
+    }
+    .form-actions {
+        border:1px solid color(secondary,500);
+        display: inline-block;
+        margin: 0 auto;
+        position: relative;
+        &:focus,
+        &:hover{
+            background: color(secondary,500);
+            &:after{
+                color:color(grayscale,white);
+            }
+        }
+        &:after{
+            color:color(secondary,500);
+            content: "\e911";
+            font-family: $font-icon;
+            font-size: 1.4rem;
+            position: absolute;
+            right: 1.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        .button{
+            background: transparent;
+            border:0;
+            color: color(secondary,500);
+            display: inline-block!important;
+            padding: 0 1.6rem;
+            padding-right: 3.2rem;
+            position: relative;
+            width: auto;
+            z-index: 1;
+            &:hover{
+                color:color(grayscale,white);
+            }
+        }
+    }
+    .modal-login-left{
+        .content-user-form {
+            h2{
+                background: color(secondary,500);
+                margin-bottom: 0;
+            }
+            .top-elements{
+                flex-direction: column;
+                flex-wrap: wrap;
+                font-weight: bold;
+                justify-content: center;
+                a{
+                    color:color(secondary,100);
+                    display: block;
+                    font-weight: bold;
+                    margin-top: .5rem;
+                }
+            }
+            .login-links{
+                font-size: 1.4rem;
+                margin-top: 1rem;
+                text-align: center;
+                a{
+                    color:color(secondary,500);
+                    display: inline-block;
+                    &:last-child{
+                        margin-top: .2rem;
+                    }
+                }
+            }
+        }
+        .user-login-form{
+            box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            margin:0;
+            padding: 2rem;
+            text-align: center;
+            label,
+            .form-item{
+                text-align: left;
+            }
+        }
+    }
+    .modal-login-right{
+        margin:2rem 0;
+        .block-revive-adserver {
+            height: 100%;
+            iframe{
+                display: block;
+                height: auto;
+                min-height: 60rem;
+                width: 100%;
+            }
+        }
+    }
+}
+.modal-backdrop{
+    background: color(grayscale,white);
+    opacity: .9!important;
+}
+#modal-visits{
+    .modal-content{
+        border:1px solid color(secondary,500);
+    }
+    .modal-header{
+        background: color(secondary,500);
+        color:color(grayscale,white);
+        justify-content: center;
+        text-align: center;
+        padding: 1rem 3.5rem .8rem;
+        position: relative;
+        .modal-title{
+            font-family: $font-secondary;
+            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+        .btn-close{
+            align-items: center;
+            background: color(grayscale,white);
+            border-radius: 100%;
+            color: color(secondary,500);
+            display: flex;
+            justify-content: center;
+            opacity: 1;
+            position: absolute;
+            right: 1.6rem;
+            top: 1.3rem;
+            &:after{
+                content: "\e90f";
+                font-family: $font-icon;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .modal-body{
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        p{
+            margin-bottom: 1rem;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .btn{
+            background: transparent;
+            border:1px solid color(secondary,500);
+            font-size: 1.4rem;
+            color:color(secondary,500);
+            margin:2rem auto;
+            text-transform: uppercase;
+            &:hover,
+            &:focus{
+                background: color(secondary,500);
+                color:color(grayscale,white);
+            }
+        }
+    }
+}
+.main-header .view-notifications{
+    max-height: 370px;
+    overflow-y: auto;
+    padding: 0 1.6rem 3rem;
+    .views-row{
+        border-bottom: 1px solid color(secondary,500);
+        align-items: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+        padding-bottom: 2.5rem;
+        position: relative;
+        &:last-child{
+            border-bottom: 0;
+        }
+        .field--name-created {
+            color:color(secondary,500);
+            bottom: 1rem;
+            position: absolute;
+            right: 0;
+        }
+        .bs-region--left{
+            max-width: 50px;
+            padding: 0;
+            width: auto;
+        }
+        .bs-region--right{
+            max-width: calc(100% - 50px);
+            padding: 0;
+            padding-left: 1rem;
+            .field--name-title{
+                margin-bottom: .5rem;
+            }
+        }
+    }
+    .more-link{
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        a{
+            background: #00c1ca;
+            color: color(grayscale,white);
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: block;
+            padding: .5rem;
+            text-transform: uppercase;
+            &:after{
+                content: "\e911";
+                font-family: $font-icon;
+                font-size: 1.4rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+.notification--type-notification{
+}
+@include mq-min(md){
+    .login-dialog{
+        .modal-login-top{
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            margin:0 auto;
+            max-width: 800px;
+        }
+        .modal-login-content{
+            display: flex;
+            justify-content: space-between;
+            margin:0 auto;
+            max-width: 790px;
+            padding-left: 5rem;
+            width: 100%;
+        }
+        .modal-login-left{
+            max-width: 400px;
+            width: 100%;
+            .content-user-form{
+                padding: 0;
+                .top-elements{
+                    align-items: center;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-bottom: 1rem;
+                    a{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        .modal-login-right{
+            margin:0;
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+}

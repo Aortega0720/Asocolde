@@ -1,0 +1,63 @@
+id: asocolderma_node_video
+label: Asocolderma node video migration
+migration_group: asocolderma
+
+source:
+  plugin: asocolderma_node_video
+  node_type: video
+  # The "target" here refers to the database connection where the source data lives.
+  # You will need to configure this database in your settings.php.
+  target: asocol_d7
+
+destination:
+  plugin: entity:node
+
+process:
+  uid: node_uid
+  type:
+    plugin: default_value
+    default_value: video
+  langcode:
+    plugin: default_value
+    default_value: es
+  status: status
+  title: title
+  created: created
+  changed: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  body: body
+  field_source: field_fuente
+  field_tags:
+    plugin: sub_process
+    source: field_tags
+    process:
+      target_id: tid
+  field_disease_type:
+    plugin: sub_process
+    source: field_tipo_enfermedad
+    process:
+      target_id: tid
+
+
+
+
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - asocol_migrate

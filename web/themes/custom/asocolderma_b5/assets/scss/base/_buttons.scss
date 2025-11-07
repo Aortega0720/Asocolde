@@ -1,0 +1,57 @@
+.btn {
+   font-family: $font-primary;
+   border: none;
+   border-radius: 0;
+   box-shadow: none;
+   cursor: pointer;
+   display: inline-block;
+   font-size: $font-size;
+   font-weight: 600;
+   height: 3.5rem;
+   line-height: 3rem;
+   outline: none;
+   padding: ( 0 ) ( $font-size + .9rem);
+   width: 100%;
+   @include mq-min(md) {
+      width: auto;
+   }
+   &:hover,
+   &:focus{
+      box-shadow: none;
+      outline: none;
+   }
+   &:hover{
+      font-weight: 600;
+   }
+   &-primary,
+   &--primary {
+      @include button( transparent, var(--main-color));
+      border: .13rem solid var(--main-color);
+      &:hover,
+      &:active {
+         background: var(--main-color);
+         border: .13rem solid var(--main-color);
+         color:color(grayscale,white);
+         text-decoration: none;
+      }
+      &.active{
+         border: .13rem solid var(--main-color);
+      }
+   }
+   &--secondary {
+      @include button( color( tertiary, 500 ), color( grayscale, white ) );
+      &.outline {
+         @include button( color( grayscale, white ), color( tertiary, 500 ) );
+         border: .15rem solid color( tertiary, 500);
+         &:hover, &:active {
+            opacity: 0.8;
+         }
+      }
+      &.btn--whatsapp{
+        background: #0bc144;
+        &:before{
+          border-color:#0bc144;
+        }
+      }
+   }
+}

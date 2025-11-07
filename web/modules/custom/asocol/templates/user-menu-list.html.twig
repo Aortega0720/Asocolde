@@ -1,0 +1,10 @@
+{% if picture %}
+<div class="dropdown">
+  <button class="btn-user dropdown-toggle" type="button" id="user-menu-list" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ picture }} {{ fullname }}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="user-menu-list">
+    {{ menu }}
+  </div>
+</div>
+{% endif %}

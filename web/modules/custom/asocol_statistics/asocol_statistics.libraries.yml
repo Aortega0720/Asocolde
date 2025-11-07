@@ -1,0 +1,17 @@
+asocol_statistics.statistics:
+  version: VERSION
+  js:
+    js/statistics.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+asocol_statistics.google_charts:
+  version: VERSION
+  js:
+    https://www.gstatic.com/charts/loader.js: { type: external, minified: true }
+    js/charts.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

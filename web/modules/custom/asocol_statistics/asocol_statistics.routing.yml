@@ -1,0 +1,7 @@
+asocol_statistics.user_statistics:
+  path: '/usuario/estadisticas'
+  defaults:
+    _controller: '\Drupal\asocol_statistics\Controller\UserController::StatisticsPage'
+    _title: 'Statistics of my profile'
+  requirements:
+    _user_is_logged_in: 'TRUE'

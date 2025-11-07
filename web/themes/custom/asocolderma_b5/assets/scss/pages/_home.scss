@@ -1,0 +1,1093 @@
+.page-node-type-section{
+    .body-content{
+        box-shadow: none;
+    }
+}
+.path-frontpage {
+    .block-page-title-block{
+        display: none;
+    }
+}
+.main-content{
+    position: relative;
+}
+.path-frontpage {
+    margin-top: 0;
+    .wrapper-body{
+        box-shadow: none;
+    }
+    .wrapper-body--main {
+        .main-content{
+            padding: 0 1.6rem;
+        }
+    }
+}
+#block-tituloprehome{
+    background: color(primary,500);
+    color:color(grayscale,white);
+    padding: .5rem 1.6rem;
+    text-align: center;
+}
+.layout__region--second{
+    .block-inline-blockprehome{
+        background: hex-to-rgba(color(primary,50),.4);
+        h2{
+            a{
+                border:2px solid color(primary,500);
+                color:color(primary,500);
+                &:hover{
+                    background: color(grayscale,white);
+                    color:color(primary,500);
+                }
+            }
+        }
+    }
+
+}
+.block-inline-blockprehome{
+    background: color(secondary,500);
+    color:color(grayscale,white);
+    text-align: center;
+    padding: 1.6rem 1rem;
+    position: relative;
+    &:hover{
+        cursor: pointer;
+        opacity: 0.95;
+        .field--name-field-image{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+    h2{
+        font-weight: normal;
+        .ajax-progress{
+            display: none;
+        }
+        a{
+            border:2px solid color(grayscale,white);
+            color:color(grayscale,white);
+            display: inline-block;
+            font-family: $font-secondary;
+            font-size: 1.3rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: .8rem 1.2rem .5rem;
+            transition: all .4s;
+            &:hover{
+                background: color(grayscale,white);
+                color:color(secondary,500);
+            }
+            &:before{
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+    }
+    .field--type-image {
+        border:5px solid color(grayscale,white);
+        margin-top: 1.5rem;
+        height: 260px;
+        overflow:hidden;
+        img{
+            height: 260px;
+            transform: scale(1);
+            transition: transform .5s;
+            width: 100%;
+            @include prefix(object-fit , cover, webkit moz o ms);
+            @include prefix(object-position , 0 0, webkit moz o ms);
+        }
+    }
+}
+.block-prehome-members,
+.block-prehome-derma{
+    .link{
+        padding: 0;
+    }
+    h2{
+        font-size: 1.4rem;
+        margin:0;
+    }
+    .columns-block{
+        background:hex-to-rgba(color(primary,50),.7);
+        border-top: 1px solid color(primary,500);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        .image{
+            width: 100%;
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+        .text{
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+            .link{
+                a{
+                    @extend %btn-outline-arrow;
+                    border-color:color(primary,500);
+                    color:color(primary,500);
+                    font-size: 1.3rem;
+                    &:hover,
+                    &:focus{
+                        background:color(primary,500);
+                        color:color(grayscale,white);
+                    }
+                }
+            }
+        }
+    }
+    .logo-block{
+        padding: 2rem;
+        text-align: center;
+        &__image{
+            img{
+                display: block;
+                height: auto;
+                margin:0 auto 1.5rem;
+                max-width: 200px;
+            }
+        }
+        &__link{
+            margin-top: 2.5rem;
+            a{
+                @extend %btn-outline-arrow;
+                color:color(secondary,500);
+                border-color:color(secondary,500);
+                font-size: 1.3rem;
+                &:hover,
+                &:focus{
+                    background:color(secondary,500);
+                    color:color(grayscale,white);
+                }
+            }
+        }
+    }
+}
+.block-prehome-members{
+    .logo-block{
+        background:hex-to-rgba(color(primary,50),.3);
+        border-top: 1px solid color(secondary,500);;
+        &:nth-child(3){
+            background:#f5e5f9;
+            border-top: 1px solid #a75a8f;
+            h2{
+                color:#a75a8f;
+            }
+            .logo-block__image{
+                img{
+                    margin-bottom: 0;
+                    max-width: 50px;
+                }
+            }
+            .logo-block__link{
+                a{
+                    border-color: #a75a8f;
+                    color:#a75a8f;
+                    &:hover,
+                    &:focus{
+                        background: #a75a8f;
+                        color:color(grayscale,white);
+                    }
+                }
+            }
+        }
+        &:first-child{
+            .logo-block__link {
+                a{
+                    border-color: #52bcd6;
+                    color:#52bcd6;
+                    &:hover,
+                    &:focus{
+                        background: #52bcd6;
+                        color:color(grayscale,white);
+                    }
+                }
+            }
+        }
+    }
+}
+.block-prehome-derma{
+    .logo-block{
+        background: #fff7e9;
+        border-top: 1px solid #ffb957;
+        &__link{
+            a{
+                border-color: #ffb957;
+                color:#ffb957;
+                &:hover,
+                &:focus{
+                    background: #ffb957;
+                    color:color(grayscale,white);
+                }
+            }
+        }
+    }
+}
+.magazine-block{
+    border:1px solid color(border, color-1);
+    text-align: center;
+    padding: 2rem;
+    .magazine-block__last{
+        border-bottom: .1rem solid color(primary,500);
+        border-left: .5rem solid color(primary,500);
+        margin: 2rem 0;
+        padding: 0 .4rem;
+        h3{
+            color: color(grayscale,400);
+            font-size: .76rem;
+            font-weight: normal;
+        }
+    }
+    &__link{
+        a{
+            @extend %btn-outline-arrow;
+            color:color(primary,500);
+            border-color:color(primary,500);
+            font-size: 1.3rem;
+            &:hover,
+            &:focus{
+                background:color(primary,500);
+                color:color(grayscale,white);
+            } 
+        }
+    }
+}
+.view-patient-articles{
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.6rem;
+    &.view-display-id-block_home_asocolderma,
+    &.view-display-id-block_other_news {
+        border-top:1px solid var(--main-color);
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+    &.view-display-id-block_home_asocolderma{
+        border-top:1px solid color(tertiary,500);
+        .group-top{
+            .more-link{
+                a{
+                    border-color: color(tertiary,500);
+                    color:color(tertiary,500);
+                    &:hover,
+                    &:focus{
+                        background: color(tertiary,500);
+                        color:color(grayscale,white);
+                    }
+                }
+            }
+        }
+    }
+    &.view-display-id-block_home_asocolderma,
+    &.view-display-id-block_asocolderma_list{
+        background: var(--main-color-100);
+    }
+    &.view-display-id-block_asocolderma_list,
+    &.view-display-id-block_other_news_list {
+        .view-content {
+            padding: 1rem;
+            .row{
+                margin:0;
+            }
+            .col-sm-3{
+                padding: 0;
+            }
+            .field--name-node-title {
+                border-top: 1px solid var(--main-color);
+                padding-top: .5rem;
+            }
+            .field--name-node-post-date {
+                margin-bottom: .5rem;
+            }
+            .field--name-field-type{
+                margin-bottom: .5rem;
+                width: 59%;
+            }
+            .field--name-field-tags{
+                width: 100%;
+            }
+        }
+    }
+    &.view-display-id-block_asocolderma_list {
+        .view-content {
+            .field--name-node-title {
+                border-top: 1px solid color(tertiary,500);
+            }
+        }
+    }
+    .group-top{
+        align-items: center;    
+        border-bottom: 1px solid color(grayscale,600);
+        display: flex;
+        justify-content: space-between;
+        padding: .6rem 1rem;
+        h2{
+            font-size: 1.4rem;
+            margin:0;
+            max-width: calc(100% - 100px);
+        }
+        .more-link{
+            a{
+                @extend %btn-outline-arrow-primary;
+                padding: .2rem .5rem;
+            }
+        }
+    }
+    .view-content{
+        padding: 1.5rem;
+        .field--name-node-post-date,
+        .field--name-field-type {
+            display: inline-block;
+            margin-bottom: 15px;
+            vertical-align: top;
+            width: 60%;
+        }
+        .field--name-field-type{
+            font-family: $font-secondary;
+            font-size: 1.6rem;
+        }
+        .field--name-node-post-date{
+            color:color(grayscale,400);
+            font-size: 1.2rem;
+            text-align: right;
+            width: 38%;
+        }
+        .field--name-node-title {
+            margin-bottom: 1.5rem;
+            h2{
+                font-size: 1.6rem;
+                font-weight: normal;
+                line-height: 2.2rem;
+                margin:0;
+            }
+            a{
+                color:color(grayscale,black);
+                &:hover,
+                &:focus{
+                    color:var(--main-color);
+                }
+            }
+        }
+        .field--name-field-image{
+            margin-bottom: 1rem;
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+        .field--name-field-social-share,
+        .field--name-field-tags{
+            display: inline-block;
+            vertical-align: top;
+            width: 52%;
+        }
+        .field--name-field-tags{
+            .field__items,
+            .field__label,
+            .field__item{
+                display: inline;
+            }
+        }
+        .field--name-field-social-share {
+            width: 46%;
+            ul{
+                justify-content: flex-end;
+                li{
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    a{
+                        color:color(grayscale,black);
+                        &:hover,
+                        &:focus{
+                            color:var(--main-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.title-multimedia{
+    font-family: $font-secondary;
+    font-size: 1.9rem;
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+.multimedia-block-section {
+    .layout__region--first,
+    .layout__region--second,
+    .group-right,
+    .group-left{
+        padding: 20px;
+        background: var(--main-color-100);
+        width: 100%;
+        .layout__region--first,
+        .layout__region--second{
+            background: transparent;
+            padding: 0;
+        }
+    }
+    .layout__region--second,
+    .group-right{
+        background: color(backgrounds,50);
+        .field--name-field-video{
+            a{
+                &:after{
+                    content: "\e915";
+                }
+            }
+        }
+    }
+    .layout__region--first,
+    .layout__region--second,
+    .group-right,
+    .group-left{
+        .field--name-field-video,
+        .field--name-field-image{
+            a{
+                display: block;
+                position: relative;
+                &:after{
+                    content: "\e914";
+                    color:color(grayscale,white);
+                    display: block;
+                    font-family: $font-icon;
+                    font-size: 3.6rem;
+                    left: 1rem;
+                    line-height: 3.6rem;
+                    position: absolute;
+                    top: 1rem;
+                }
+            }
+        }
+        .field--name-field-video,
+        .field--name-field-image{
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+        .field--name-node-title{
+            padding: 1rem 0 2.5rem 0;
+            h2{
+                font-weight: normal;
+                font-size: 1.7rem;
+                line-height: 2rem;
+                a{
+                    color:color(grayscale,black);
+                }
+            }
+        }
+        .field--name-field-source {
+            font-size: 1.2rem;
+            &:before{
+                content: '©';
+                display: inline-block;
+                font-size: 1.4rem;
+                margin-right: .5rem;
+            }
+        }
+        .social-media-sharing{
+            padding: 2rem 0;
+            ul{
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        .block-views-blockmultimedia-block-video-list,
+        .block-views-blockmultimedia-block-gallery-list{
+            .multimedia-block {
+                .views-row{
+                    border-bottom: 1px solid color(tertiary,500);
+                    margin-bottom: 1rem;
+                    padding-bottom: 1rem;
+                    &:last-child{
+                        border-bottom: 0;
+                    }
+                    .layout__region--first{
+                        width: 100px;
+                        .field--name-field-video,
+                        .field--name-field-image {
+                            a{
+                                &:after{
+                                    font-size: 3rem;
+                                    left: 50%;
+                                    line-height: 3rem;
+                                    top: 50%;
+                                    transform: translate(-50%,-50%);
+                                }
+                            }
+                        }
+                        img{
+                            display: block;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+                    .layout__region--second{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: calc(100% - 100px);
+                        .field--name-node-title{
+                            padding: 0 0 1rem 0;
+                        }
+                        h2{
+                            font-size: 1.4rem;
+                            padding: 0;
+                        }
+                    }
+                }
+                .more-link{
+                    a{
+                        @extend %btn-outline-arrow-primary;
+                        padding: .3rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+div[id^="block-highlight-dermatologist-find"],
+div[id^="block-highlight-dermatologist-query"]{
+    background: color(tertiary,200);
+    border-radius: 20px;
+    overflow:hidden;
+    h2{
+        border-bottom: 1px solid color(tertiary,600);
+        font-size: 1.8rem;
+        padding: 1rem 1.6rem;
+        text-align: center;
+    }
+    .block-content {
+        align-items: center;
+        display: flex;
+        padding: 2rem 1.6rem;
+    }
+    .field--name-field-image {
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .bs-region--right{
+        margin-top: 1.3rem;
+        text-align: center;
+        .field--name-body {
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+        .field--name-field-link {
+            margin-top: 1.6rem;
+            a{
+                @extend %btn-outline-arrow-tertiary;
+            }
+        }
+    }
+}
+div[id^="block-highlight-dermatologist-query"]{
+    background: color(primary,20);
+    h2{
+        border-bottom: 1px solid color(primary,500);
+    }
+    .bs-region--right{
+        .field--name-field-link {
+            a{
+                border-color: color(primary,500);
+                color: color(primary,500);
+                &:hover,
+                &:focus{
+                    background: color(primary,500);
+                    color: color(grayscale,white);
+                }
+            }
+        }
+    }
+}
+div[id^="block-enlaceshomepacientes"]{
+    border-bottom: 1px solid color(tertiary,600);
+    padding: 3rem 2.5rem 2rem;
+    .field__item{
+        margin-bottom: 1rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        .field__item{
+            margin:0;
+        }
+    }
+    .paragraph--type--link-image{
+        align-items: center;
+        display: flex;
+        .field--name-field-image{
+            width: 4rem;
+            img{
+                display: block;
+                height: auto;
+                width: 4rem;
+            }
+        }
+        .field--name-field-link{
+            font-weight: bold;
+            padding-left: 1.6rem;
+            width: calc(100% - 4rem);
+            a{
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+div[id^="block-educaciondirigidaalacomunidad"]{
+    border-bottom: 1px solid color(primary,500);
+    padding: 3rem 2.5rem 2rem;
+    h2{
+        color:color(primary,500);
+        font-family: $font-secondary;
+        font-weight: normal;
+        margin-bottom: 1rem;
+    }
+    .field--name-body {
+        a{
+            display: inline-block;
+            text-decoration: underline;
+            position: relative;
+            padding-right: 1.8rem;
+            &:after{
+                content: "\e911";
+                font-family: $font-icon;
+                font-size: 1.4rem;
+                position: absolute;
+                top: 0.3rem;
+                right: 0;
+            }
+        }
+    }
+}
+.content-top-page{
+    .view-banners {
+        .slick__arrow {
+            .slick-arrow{
+                background: #7c7b7b;
+                &:before{
+                    color:color(grayscale,white);
+                    font-size: 2rem;
+                }
+            }
+        }
+        .slide__content {
+            .slide__caption{
+                padding: .5rem 1.6rem .3rem;
+            }
+        }
+    }
+}
+.blocks-slider{
+    .grid{
+        grid-gap: .6rem;
+    }
+    .grid-sm-6{
+        &:nth-child(2n){
+            .image-block{
+                background: #e4f3f4;
+                border-color: color(secondary,500);
+                .image__texts{
+                    h2{
+                        color:color(secondary,500);
+                    }
+                }
+                &:nth-child(2n){
+                    background: #f7f7f7;
+                    border-color: #121212;
+                    .image__texts{
+                        h2{
+                            color:#121212;
+                        }
+                    }
+                    .image-block__link{
+                        a{
+                            border-color:#121212;
+                            color:#121212;
+                            &:hover,
+                            &:focus{
+                                background: #121212;
+                                color:color(grayscale,white);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        .image-block{
+            &:nth-child(2n){
+                background: #e9f5ff;
+                border-color: color(primary,500);
+                .image__texts{
+                    h2{
+                        color:color(primary,500);
+                    }
+                }
+                .image-block__link{
+                    a{
+                        border-color:color(primary,500);
+                        color:color(primary,500);
+                        &:hover,
+                        &:focus{
+                            background: color(primary,500);
+                            color:color(grayscale,white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .image-block{
+        background: #fff7e9;
+        border-top:1px solid color(tertiary,600);
+        align-items: center;
+        display: flex;
+        padding: 1.5rem;
+        &__image{
+            img{
+                display: block;
+                height: auto;
+                width: 100px;
+            }
+        }
+        .image__texts{
+            max-width: calc(100% - 100px);
+            padding-left: 1.6rem;
+            h2{
+                color:color(tertiary,600);
+                font-size: 1.6rem;
+            }
+        }
+        &__link{
+            a{
+                @extend %btn-outline-arrow-tertiary;
+            }
+        }
+    }
+}
+.view-display-id-block_slider_gremial{
+    .slick-track{
+        .slide__media{
+            a{
+                display: block;
+                img{
+                    display: block;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.block-system-main-block{
+    .node--type-section {
+        .layout--twocol-section--50-50{
+            display: block;
+        }
+    }
+    .node--type-article.node--view-mode-full{
+        .field--name-body{
+            a{
+                word-break: break-word;
+            }
+        }
+    }
+}
+@include mq-max(md){
+    .path-frontpage{
+        .block-system-main-block {
+            .node--type-section {
+                .layout--twocol-section--50-50{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+}
+@include mq-min(md){
+    .path-frontpage{
+        margin-top: 5rem;
+        .top-menu {
+            .region-header-scroll{
+                justify-content: start;
+            }
+        }
+    }
+    .region-content{
+        .node--type-section{
+            .layout--twocol-section{
+                column-gap: 1.6rem;
+                flex-wrap: inherit;
+                &.multimedia-block-section{
+                    align-items: flex-start;
+                    column-gap: 0;
+                }
+            }
+        }
+    }
+    .multimedia-block-section {
+        .layout__region--first,
+        .layout__region--second,
+        .group-right,
+        .group-left{
+            width: 50%;
+        }
+    }
+    .path-frontpage{
+        .region-content{
+            .node--type-section {
+                .layout--twocol-section.top-information{
+                    gap: 0;
+                }
+            }
+        }
+    }
+    .block-prehome-members {
+        .logo-block{
+        }
+    }
+    .block-inline-blockprehome{
+        padding: 2rem;
+    }
+    .block-system-main-block{
+        .node--type-section {
+            .layout--twocol-section--50-50{
+                .layout__region--first,
+                .layout__region--second{
+                    display: inline-block;
+                    margin-right: .8rem;
+                    vertical-align: top;
+                    width: calc(50% - 1.2rem);
+                }
+                .layout__region--second{
+                    margin-left: .8rem;
+                    margin-right: 0rem;
+                }
+            }
+      
+        }
+    }
+    div[id^="block-highlight-dermatologist-find"],
+    div[id^="block-highlight-dermatologist-query"]{
+        .bs-region--right{
+            margin-top: 0;
+        }
+        h2{
+            text-align: left;
+        }
+    }
+    .content-top-page{
+        .bs-region--right{
+            div{
+                height: 100%;
+            }
+        }
+        .view-banners {
+            .slide__content {
+                .slide__caption{
+                    height: auto;
+                }
+            }
+            .slick__arrow {
+                .slick-arrow{
+                    height: 3.5rem;
+                    width: 3.5rem;
+                    &:before{
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mq-min(lg){
+    .content-column-top{
+        display: flex;
+        flex-direction: row;
+        gap: 1.6rem;
+        .region{
+            flex: 1 1 0px;
+        }
+    }
+    #block-tituloprehome{
+        left: -50vw;
+        margin-left: 50%;
+        overflow: hidden;
+        position: relative;
+        width: 99vw;
+    }
+    .page-node-type-section{
+        &.path-frontpage{
+            .body-content{
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+        .body-content{
+            padding: 2rem 0 4rem;
+        }
+    }
+    .path-congresos-eventos{
+        .body-content{
+            box-shadow: none;
+            padding: 0;
+        }
+    }
+    
+    .block-prehome-members,
+    .block-prehome-derma{
+        display: flex;
+        margin-top: 1rem;
+        .columns-block{
+            flex-direction: row;
+            padding: 1.5rem;
+            .image{
+                width: 35%;
+            }
+            .text{
+                padding-right: 0;
+                width: 65%;
+            }
+        }
+        .logo-block{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 155.7px;
+            padding: 1.5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            &__link{
+                bottom: 1rem;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+            &__image{
+                img{
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+    .block-prehome-derma{
+        .columns-block{
+            min-height: 155.7px;
+            padding-bottom: 1rem;
+            padding-top: 2rem;
+            width: 70%;
+            .image{
+                height: 100%;
+                img{
+                    height: 90%;
+                    @include prefix(object-fit , cover, webkit moz o ms);
+                    @include prefix(object-position , center, webkit moz o ms);
+                }
+            }
+            .link{
+                bottom: 0;
+                left: 0;
+                margin-top: 0;
+                position: absolute;
+                width: 100%;
+            }
+            .text{
+                height: 100%;
+                padding-bottom: 5.5rem;
+                padding-top: 0;
+                position: relative;
+                h2{
+                    margin:0 auto;
+                    max-width: 205px;
+                }
+            }
+        }
+        .logo-block{
+            width: 30%;
+            &__title{
+                margin:0 auto;
+                max-width: 155px;
+            }
+            .logo-block__image{
+                img{
+                    margin-bottom: 5px;
+                    max-width: 50px;
+                }
+            }
+        }
+    }
+    .magazine-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 1rem 5rem;
+        position: relative;
+        &__link{
+            bottom: 1rem;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+    div[id^="block-highlight-dermatologist-find"], 
+    div[id^="block-highlight-dermatologist-query"]{
+        position: relative;
+        h2{
+            padding: 1.3rem 1.6rem;
+            padding-right: 245px;
+        }
+        .bs-region--right {
+            .field--name-field-link{
+                margin:0;
+                right: 1rem;
+                position: absolute;
+                top: 1rem;
+                a{
+                    padding: .3rem .5rem;
+                }
+            }
+        }
+    }
+    div[id^="block-enlaceshomepacientes"]{
+        .field--name-field-link-image{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            min-height: 226px;
+        }
+        .paragraph--type--link-image {
+            .field--name-field-link{
+                width: calc(100% - 19rem);
+            }
+        }
+    }
+}
+@include mq-min(l){
+    .page-node-type-section{
+        .main-content{
+            padding-left: 1.5rem;
+        }
+    }
+}

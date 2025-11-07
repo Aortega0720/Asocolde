@@ -1,0 +1,10 @@
+asocol.user.notifications:
+  route_name: asocol.notification_add
+  title: 'Add notification'
+  appears_on:
+    - view.admin_notifications.page_1
+asocol.user.memberships_import:
+  route_name: asocol.membership_import
+  title: 'Import memberships'
+  appears_on:
+    - view.admin_membership.page

@@ -1,0 +1,6 @@
+services:
+  asocol_statistics.storage.user:
+    class: Drupal\asocol_statistics\UserStatisticsDatabaseStorage
+    arguments: ['@database', '@state', '@request_stack']
+    tags:
+      - { name: backend_overridable }

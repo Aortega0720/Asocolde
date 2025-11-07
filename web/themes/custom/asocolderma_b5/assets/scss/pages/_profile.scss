@@ -1,0 +1,428 @@
+.path-directorio-dermatologos{
+    .body-content{
+        box-shadow: none;
+    }
+}
+.profile-dermatologist{
+    p{
+        text-align: center;
+    }
+}
+.content-user-form{
+    padding: 3rem 0;
+    .top-elements{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+    h2{
+        background: var(--main-color);
+        color:color(grayscale,white);
+        font-size: 1.9rem;
+        padding: .6rem 1.6rem;
+        text-align: center;
+    }
+    form{
+        margin:2rem 0;
+    }
+    .login-links{
+        align-items: center;
+        border-bottom: 1px solid var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        row-gap: .5rem;
+        a{
+            text-decoration: underline;
+        }
+    }
+    .bottom-text{
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        text-align: center;
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+.content-login{
+    padding: 3rem 0;
+    h2{
+        border-bottom: 1px solid var(--main-color);
+        border-top: 1px solid var(--main-color);
+        font-family: $font-secondary;
+        font-size: 1.5rem;
+        font-weight: normal;
+        padding: 1.3rem 1.6rem .8rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .form-radios{
+        align-items: center;
+        display: flex;
+        .form-type-radio{
+            margin-right: 2rem;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    .form-type-checkbox {
+        align-items: center;
+        display: flex;
+        input{
+            margin:0 1rem 0  0;
+        }
+        label{
+            font-size: 1.3rem;
+            font-weight: bold;
+            max-width: calc(100% - 3rem);
+            margin:0;
+        }
+    }
+}
+.user--type-user{
+    color:color(grayscale,800);
+    .info-dr{
+        text-align: center;
+    }
+    .field--name-drdra,
+    .field--name-field-first-name,
+    .field--name-field-first-surname {
+        color:color(grayscale,black);
+        display: inline-block;
+        font-family: $font-secondary;
+        font-size: 1.8rem;
+    }
+    .field--name-field-university-degree {
+        font-weight: bold;
+        text-align: center;
+    }
+    .field--name-user-picture {
+        margin: 2rem auto;
+        border-radius: 50%;
+        height: 150px;
+        border: 5px solid color(secondary,500);
+        overflow: hidden;
+        width: 150px;
+        img{
+            display: block;
+            height: 100%;
+            width: 100%;
+            @include prefix(object-fit, cover, webkit moz o ms);
+            @include prefix(object-position, center, webkit moz o ms);
+        }
+    }
+    .field--name-field-medicine-school,
+    .field--name-field-university-residence{
+        margin-bottom: 1.5rem;
+        text-align: center;
+        .field__label{
+            color:color(secondary,500);
+            font-size: 1.7rem;
+        }
+    }
+    .field--name-field-services-specialties,
+    .field--name-field-profile,
+    .field--name-field-laser,
+    .field--name-field-medical-speciality{
+        margin-top: 2rem;
+        .field__label{
+            color:color(grayscale,black);
+            padding: 0 0 1rem 0;
+        }
+    }
+    .field--name-field-services-specialties {
+        .field__items{
+            margin-bottom: 2.5rem;
+            .field__item{
+                align-items: center;
+                display: flex;
+                margin-bottom: 1rem;
+                &:after{
+                    content: "\e916";
+                    color: color(tertiary,400);
+                    font-family: $font-icon;
+                    font-size: 1.6rem;
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+    .field--name-field-medical-speciality{
+        margin-top: 0;
+    }
+    .field--name-field-medical-speciality,
+    .field--name-field-laser{
+        .field__item{
+            color:var(--main-color);
+        }
+    }
+    .field--name-field-laser,
+    .field--name-field-medical-speciality,
+    .field--type-telephone,
+    .field--name-field-mail-public,
+    .field--name-field-address-office,
+    .field--name-field-website{
+        border-top:1px solid color(grayscale,600);
+        padding: 1rem 0;
+    }
+    .field--name-field-website{
+        border-bottom: 1px solid color(grayscale,600);
+        margin-bottom: 2rem;
+    }
+    .field--name-field-office-images {
+        .field__label{
+            border-bottom:1px solid color(grayscale,600);
+            border-top:1px solid color(grayscale,600);
+            color:color(grayscale,black);
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+        }
+        .field__items{
+            .field__item{
+                margin-bottom: 1rem;
+                img{
+                    display: block;
+                    height: 260px;
+                    width: 100%;
+                    @include prefix(object-fit , cover, webkit moz o ms);
+                    @include prefix(object-position , center, webkit moz o ms);
+                }
+            }
+        }
+    }
+}
+.table-responsive{
+    margin-top: 2rem;
+    .table-header{
+        background: color(backgrounds,300);
+        display: none;
+        text-align: center;
+    }
+    .table-body,
+    .table-header{
+        .item-row{
+            border-right: 1px solid color(border,color-1);
+            font-size: 1.4rem;
+            &:last-child{
+                border-right: 0;
+            }
+        }
+    }
+    .table-body{
+        .d-xl-none{
+            background: color(backgrounds,300);
+            font-weight: bold;
+            padding: .5rem;
+            text-align: center;
+        }
+        .item-content{
+            padding:1rem .5rem;
+            text-align: center;
+        }
+        .item-row{
+            border: 1px solid color(border,color-1);
+            margin-bottom: 2.5rem;
+            &:last-child{
+                border-right: 1px solid color(border,color-1);
+            }
+        }
+    }
+}
+.path-user{
+    .accesibility-options{
+        flex-wrap: wrap;
+        .field--name-user-recertificate {
+            align-items: center;
+            color:color(grayscale,black);
+            display: flex;
+            font-weight: bold;
+            justify-content: center;
+            gap: 1rem;
+            order: 3;
+            padding: .5rem 0;
+            width: 100%;
+            .moneda-item{
+                background: url('../assets/images/icons/Sello_CAMEC.png') no-repeat center;
+                background-size: contain;
+                display: block;
+                height: 4rem;
+                width: 4rem;
+            }
+        }
+    }
+}
+@include mq-min(md){
+    .path-user{
+        .accesibility-options{
+            display: flex;
+            flex-wrap: inherit;
+            margin:0;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            .field--name-user-recertificate {
+                order: initial;
+                width: auto;
+            }
+        }
+    }
+    .profile-dermatologist{
+        .view-filters {
+            .views-exposed-form{
+                padding-left: 0;
+                padding-right: 0;
+                .form--inline{
+                    flex-wrap: wrap;
+                    .form-item{
+                        width: calc(100%/2 - 1rem);
+                    }
+                }
+            }
+        }
+    }
+    .content-login{
+        .user-register-form {
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 1.6rem;
+            row-gap: 1.6rem;
+            label,
+            legend,
+            .label{
+                font-size: 1.3rem;
+                line-height: 1.3rem;
+                margin-bottom: .8rem;
+            }
+            legend{
+                display: block;
+            }
+            .captcha{
+                width: 100%;
+            }
+            .form-wrapper{
+                width: calc(100%/2 - .8rem);
+                &.field--type-geolocation,
+                &.field--name-field-recertificate,
+                &.field--name-field-profile-directory,
+                &.field--name-field-legal-terms,
+                &.form-actions,
+                &.field--name-field-type-associated{
+                    width: 100%;
+                }
+                .form-item{
+                    margin:0;
+                    &.form-type-radio{
+                        margin-right: 2rem;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                }
+                &#edit-field-correspondence--wrapper{
+                    width: 100%;
+                }
+                &.field--type-boolean {
+                    label{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    .table-responsive{
+        .table-body,
+        .table-header{
+            display: flex;
+            .item-row{
+                flex: 1 1 0px;
+            }
+        }
+        .table-header{
+            .item-row{
+                align-items: center;
+                display: flex;
+                padding: .5rem 1rem;
+            }
+        }
+        .table-body{
+            display: block;
+            .item-row{
+                border: 0;
+                display: flex;
+                margin-bottom: 0;
+                &:last-child{
+                    border-right: 0;
+                }
+                .item-cell{
+                    flex: 1 1 0px;
+                    padding: .5rem 1rem;
+                    position: relative;
+                    &:after{
+                        background: color(border,color-1);
+                        content: '';
+                        display: block;
+                        height: 2rem;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: .1rem;
+                    }
+                    &:last-child{
+                        &:after{
+                            content: none;
+                        }
+                    }
+                    .item-content{
+                        padding: 0;
+                        text-align: left;
+                    }
+                }
+                &:nth-child(2n){
+                    background: color(backgrounds,200);
+                }
+            }
+        }
+    }
+    .user--type-user {
+        .field--name-field-services-specialties {
+            .field__items {
+                display: flex;
+                flex-wrap: wrap;
+                .field__item{
+                    width: 50%;
+                    &:nth-child(2n){
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .field--name-field-laser,
+        .field--name-field-medical-speciality,
+        .field--type-telephone,
+        .field--name-field-mail-public,
+        .field--name-field-address-office,
+        .field--name-field-website{
+            display: flex;
+            justify-content: space-between;
+            .field__item{
+                text-align: right;
+            }
+        }
+        .field--name-field-office-images {
+            .field__items {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .field__item{
+                    width: 49%;
+                }
+            }
+        }
+    }   
+}

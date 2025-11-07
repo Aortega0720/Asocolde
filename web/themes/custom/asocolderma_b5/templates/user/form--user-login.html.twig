@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<div class="content-user-form">
+  <div class="top-elements">
+    <p>¿No es miembro de AsoColDerma?</p>
+    <a href="/user/register" class="" rel="nofollow" title="Crear nueva cuenta">Afíliese</a>
+  </div>
+  <h2>Inicio sesión AsoColDerma</h2>
+  <form{{ attributes }}>
+    {{ children }}
+  </form>
+  <div class="login-links">
+    <a href="/user/password" class="" rel="nofollow" title="Solicitar una nueva contraseña">¿Olvidó su nombre de usuario o contraseña?</a>
+    <a href="/ayuda" class="">Ayuda</a>
+  </div>
+  <div class="bottom-text">
+    <p> Este espacio está dirigido únicamente a médicos dermatólogos, miembros de la Asociación Colombiana de Dermatología. En caso de no cumplir los anteriores requisitos le solicitamos abstenerse de intentar el ingreso, de lo contrario estaría incurriendo en fraude por suplantación. si ya es miembro de la Asociación y no tiene contrase; a escribanos a: <a href="mailto:recepcion@asocolderma.org.co" title="">recepcion@asocolderma.org.co</a></p>
+    <p>Con sus datos de contacto y número de cédula o ID de Asociado. En menos de 48 horas recibirá un correo con las instrucciones para restablecer los datos de acceso.</p>
+  </div>
+</div>

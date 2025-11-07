@@ -1,0 +1,207 @@
+.view-dermatology-school {
+    .view-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .views-row{
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        text-align: center;
+        width: 50%;
+        .eck-entity{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .field--name-title{
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .field--name-field-image {
+            img{
+                display: block;
+                height: auto;
+                margin:0 auto;
+                max-width: 100%;
+            }
+        }
+        .field--type-link {
+            margin-top: 1.5rem;
+        }
+    }
+}
+.text-association{
+    color:color(grayscale,400);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+.text-author {
+    border-bottom: 1px solid var(--main-color);
+    border-top: 1px solid var(--main-color);
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    a{
+        font-family: $font-primary;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+}
+.block-field-blocknodesectiontitle{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-left: 2.5rem;
+    position: relative;
+    &:before{
+        content: "\e939";
+        font-family: $font-icon;
+        font-size: 2rem;
+        left: 0;
+        position: absolute;
+        transform: translateY(-58%);
+        top: 50%;
+    }
+    h1{
+        display: block;
+        font-family: $font-secondary;
+        font-size: 1.6rem;
+        font-weight: normal;
+        line-height: 1.8rem;
+        margin: 0;
+    }
+}
+.field--name-dynamic-block-fieldnode-other-news,
+.field--name-dynamic-block-fieldnode-content-related,
+.field--name-dynamic-block-fieldnode-most-read,
+.block-views-blockarticles-association-block,
+.block-views-blockarticles-association-block-other{
+    background: var(--main-color-100);
+    box-shadow: 0px 1px 5px 0px #cccccc;
+    margin-bottom: 2rem;
+    .field__label,
+    h2:not(.views-field-title){
+        background: color(backgrounds,200);
+        font-family: $font-secondary;
+        font-size: 1.6rem;
+        font-weight: normal;
+        margin:0;
+        padding: 1rem 1.5rem;
+    }
+    .view-articles-association{
+        padding: 1.5rem;
+    }
+    .views-row{
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        .views-field-field-image{
+            margin-right: 10px;
+            max-width: 120px;
+            img{
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+        }
+        .views-field-title{
+            font-size: 1.6rem;
+            max-width: calc(100% - 130px);
+            a{
+                align-items: flex-start;
+                color:color(grayscale,black);
+                display: flex;
+                &:before{
+                    content: "\e939";
+                    color:var(--main-color);
+                    font-family: $font-icon;
+                    font-size: 2rem;
+                    font-weight: normal;
+                    margin-right: 1rem;
+                    width: 2rem;
+                }
+                &:hover{
+                    color:color(primary,500);
+                }
+            }
+        }
+    }
+}
+.field--name-dynamic-block-fieldnode-other-news ,
+.field--name-dynamic-block-fieldnode-most-read,
+.field--name-dynamic-block-fieldnode-content-related{
+    .field__item{
+        padding: 2rem 1.5rem;
+    }
+    .views-row {
+        .views-field-title{
+            font-size: 1.4rem;
+        }
+    }
+}
+.view-skin-illness {
+    .view-content{
+        margin:2rem 0;
+        .views-row{
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            &:nth-child(2n){
+                background: color(backgrounds,200);
+            }
+            .views-field-field-note-type{
+                border-right: 1px solid color(backgrounds,200);
+                padding-right: 1rem;
+                width: 30%;
+                &:before{
+                    content: "\e939";
+                    font-family: $font-icon;
+                    font-size: 1.6rem;
+                    margin-right: 1rem;
+                }
+                &.type-image{
+                    &:before{
+                        content: "\e93a";
+                    }
+                }
+                &.type-video{
+                    &:before{
+                        content: "\e915";
+                    }
+                }
+            }
+            .views-field-title{
+                width: 70%;
+                padding-left: 1rem;
+                a{
+                    color:color(grayscale,black);
+                    &:hover{
+                        color:var(--main-color);
+                    }
+                }
+            }
+        }
+    }
+}
+@include mq-min(md){
+    .field--name-dynamic-block-fieldnode-other-news, 
+    .field--name-dynamic-block-fieldnode-most-read,
+    .field--name-dynamic-block-fieldnode-content-related,
+    .block-views-blockarticles-association-block-other,
+    .block-views-blockarticles-association-block {
+        .view-content{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 1.6rem;
+        }
+        .views-row{
+            width: 50%;
+        }
+    }
+}

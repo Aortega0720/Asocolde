@@ -1,0 +1,127 @@
+// ==========================================================================
+// FontStack
+// ==========================================================================
+
+$font-size         : 1.6rem;
+$font-secondary    : 'Trajan', sans-serif;
+$font-primary      : 'Trebuchet MS', sans-serif;
+$font-icon         : 'iconFont'; 
+
+// ==========================================================================
+// COLORS : Eje.: background: color( primary, light );
+// ==========================================================================
+:root {
+   --main-color: #289cff;
+   --main-color-50: #f2fcff;
+   --main-color-100: #f3fdff;
+   --main-color-200: #e8f8ff;
+}
+
+$colors: (
+   primary: (
+      20      : #e9f5ff,
+      50      : #bbe0ff,
+      100     : #f3fdff,
+      200     : #e8f8ff,
+      500     : #289cff,
+   ),
+   secondary:(
+      20       : #FFF8FB,
+      50       : #def8ff,
+      100      : #00c1ca,
+      200      : #80DDEA,
+      400      : #00c1c7,
+      500      : #07898d,
+      800      : #008b8f,
+      900      : #005F64
+   ),
+   tertiary:(
+      50       : #FDE3EE,
+      100      : #FBB9D5,
+      200      : #fff7e9,
+      300      : #e07835,
+      400      : #eaaa3a,
+      500      : #ff7d29,
+      600      : #fe8c48
+   ),
+   sections:(
+      congreso      : #513490,
+      revista        : #a2a2a4,
+      micrositios    : #07898d,
+      dermaU         : #1eafb3
+   ),
+   complementary: (
+      50       : #fff9f9,
+      300      : #82D9F5,
+      500      : #4CC9F0,
+      900      : #24A9E5
+   ),
+   backgrounds: (
+      50       : #fff9f9,
+      200      : #f7f7f7,
+      300      : #e6e6e6,
+      400      : #fffcf9,
+      500      : #f9f9f9,
+   ),
+   alerts: (
+      sucess   : #B5DBB7,
+      error    : #EEA5A5,
+      warning  : #F2D8A5,
+      info     : #0074FC
+   ),
+   controls:(
+      base     : #0074FC,
+      dark     : #0056B3,
+   ),
+   grayscale: (
+      white    : #ffffff,
+      100      : #D9D9D9,
+      400      : #747474,
+      500      : #7B7B7B,
+      600      : #cccccc,
+      800      : #808080,
+      900      : #545454,
+      black    : #000000
+   ),
+   border:(
+      color-1  : #d0d0d0,
+      color-2  : #707070,
+      color-3  : #d8d8d8,
+      color-4  : #e4e4e4
+   )
+);
+
+// ==========================================================================
+// SPACING : Eje.: padding: map-get($sizes, "tiny");
+// ==========================================================================
+
+$sizes: (
+   tiny     : 1.2rem,
+   small    : 1.4rem,
+   base     : 1.6rem,
+   thumb    : 1.8rem,
+   half     : 2rem,
+   regular  : 2.2rem,
+   large    : 3rem,
+   huge     : 4rem,
+   big      : 6rem
+);
+
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+
+$breakpoints: (
+   sm  : 540px,
+   md  : 720px,
+   lg  : 960px,
+   xl  : 1140px,
+   l   : 1380px,
+   m   : 1580px
+);
+
+// ==========================================================================
+// Alignment
+// ==========================================================================
+
+$alignment: left, center, right, justify;

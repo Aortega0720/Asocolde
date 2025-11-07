@@ -1,0 +1,277 @@
+.content-top-page{
+    margin-bottom: 2rem;
+}
+.slick__arrow{
+    z-index:0;
+}
+.view-banners{
+    display: none;
+    img{
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    .slide__content{
+        position: relative;
+    }
+    .slide__caption{
+        background: rgba(0, 0, 0, 0.2);
+        bottom: 0;
+        font-family: $font-secondary;
+        font-size: 1.6rem;
+        height: auto!important;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: inherit;
+        width: 100%;
+        z-index: 1;
+        a{
+            color:color(grayscale,white);
+            &:hover,
+            &:focus{
+                color:var(--main-color);
+            }
+        }
+    }
+    .slick__arrow {
+        .slick-arrow{
+            background: transparent;
+            color:color(grayscale,black);
+            &::before{
+                color:color(grayscale,black);
+                font-size: 2.5rem;
+            }
+            &.slick-prev {
+                left: 1.5rem;
+            }
+            &.slick-next {
+                right: 1.5rem;
+            }
+        }
+    }
+}
+.block-views-blockevents-carousel-block-patient,
+.block-views-blockevents-carousel-block-dermatologist-home{
+    border-top:1px solid var(--main-color);
+    margin-top: 1rem;
+    position: relative;
+    h2{
+        border-bottom: 1px solid color(grayscale,600);
+        font-size: 1.4rem;
+        padding: 1.3rem 1rem;
+        padding-right: 10rem;
+    }
+    .more-link{
+        position: absolute;
+        right: 0;
+        top: .7rem;
+        a{
+            @extend %btn-outline-arrow-primary;
+            align-items: center;
+            display: flex;
+            font-size: 1.3rem;
+            padding: .3rem 1rem;
+            text-transform: uppercase;
+        }
+    }
+    .slide{
+        padding-right: 2rem;
+        position: relative;
+        &.slick-current{
+            &:after{
+                opacity: 1;
+            }
+        }
+        &:after{
+            background: var(--main-color);
+            content: '';
+            height: 60%;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            width: 2px;
+        }
+    }
+    .slide__description{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        .views-field-field-image{
+            width: 100%;
+            img{
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+        }
+        .views-field-title{
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            padding-top: 1rem;
+            text-transform: uppercase;
+            width: 100%;
+            a{
+                color:color(grayscale,black);
+                &:hover{
+                    color:color(primary,500);
+                }
+            }
+        }
+    }
+}
+.user-logged-in{
+    .block-views-blockevents-carousel-block-patient,
+    .block-views-blockevents-carousel-block-dermatologist-home{
+        .views-field-title{
+            a{
+                &:hover{
+                    color: color(secondary,500);
+                }
+            }
+        }
+    }
+}
+.block-views-blockevents-carousel-block-patient-highlight,
+.block-views-blockevents-carousel-block-highlight{
+    h2{
+        background: var(--main-color);
+        color:color(grayscale,white);
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: .3rem 1rem;
+    }
+    .slide{
+        background: var(--main-color-100);
+    }
+    .slide__description{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .views-field-field-image{
+            img{
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+        }
+        .views-field-title{
+            font-family: $font-secondary;
+            font-size: 1.7rem;
+            padding: 2rem;
+            text-transform: uppercase;
+            a{
+                color:color(grayscale,black);
+            }
+        }
+        .views-field-view-node{
+            padding: 0 2rem 2rem;
+            a{
+                @extend %btn-outline-arrow-primary;
+            }
+        }
+    }
+}
+@include mq-min(md){
+    .view-banners{
+        display: block;
+    }
+    .content-top-page{
+        padding: 0 1.5rem;
+    }
+    .block-views-blockevents-carousel-block-dermatologist-home{
+        h2{
+            font-size: 1.9rem;
+            padding: 1rem;
+        }
+        .slide{
+            padding-right: 2rem;
+            &:after{
+                right: 0;
+            }
+        }
+        .slide__description{
+            flex-direction: row;
+            .views-field-field-image{
+                width: 47%;
+            }
+            .views-field-title{
+                width: calc(100% - 47%);
+                padding-left: 1rem;
+                padding-top: 0;
+            }
+        }
+    }
+    .block-views-blockevents-carousel-block-dermatologist-home,
+    .block-views-blockevents-carousel-block-patient {
+        .slick{
+            padding-left: 2rem;
+        }
+        .slick__arrow {
+            .slick-arrow{
+                height: 3.4rem;
+                width: 3.4rem;
+                &:before{
+                    font-size: 3rem;
+                }
+            }
+        }
+        .slide__description{
+            flex-direction: row;
+            .views-field-field-image{
+                width: 150px;
+            }
+            .views-field-title{
+                padding-left: 2rem;
+                padding-top: 0;
+                width: calc(100% - 150px);
+            }
+        }
+    }
+    .block-views-blockevents-carousel-block-patient-highlight,
+    .block-views-blockevents-carousel-block-highlight{
+        .slide__caption{
+            padding: 0;
+        }
+        .slide__description{
+            flex-direction: row;
+            .views-field-field-image{
+                width: 50%;
+            }
+            .views-field-title{
+                padding-bottom: 8rem;
+                width: 50%;
+            }
+            .views-field-view-node{
+                bottom: 2rem;
+                left: calc(50% + 2rem);
+                padding: 0;
+                position: absolute;
+            }
+        }
+    }
+    .view-banners{
+        .slide__caption{
+            font-size: 2.5rem;
+            line-height: 3.2rem;
+        }
+        .slide__content{
+        }
+        .slick__arrow {
+            .slick-arrow{
+                &::before{
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}
+@include mq-min(lg){
+    .content-top-page{
+        padding: 0;
+    }
+}

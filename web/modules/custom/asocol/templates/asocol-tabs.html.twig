@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs" id="tab-{{ id }}" role="tablist">
+  {% for item in items %}
+    <li class="nav-item" role="presentation">
+      <button id="tab-{{ item.id }}" class="{{ item.class_tab }}" data-bs-target="#{{ item.id }}" aria-controls="{{ item.id }}" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">
+        {{ item.title }}
+      </button>
+    </li>
+  {% endfor %}
+</ul>
+<div class="tab-content" id="content-{{ id }}">
+  {% for item in items %}
+    <div class="{{ item.class_content }}" id="{{ item.id }}" aria-labelledby="tab-{{ item.id }}" role="tabpanel">{{ item.content }}</div>
+  {% endfor %}
+</div>

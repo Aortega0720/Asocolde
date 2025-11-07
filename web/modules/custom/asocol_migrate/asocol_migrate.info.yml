@@ -1,0 +1,12 @@
+name: Asocolderma Migrate
+type: module
+description: Store migration from previous D7 website.
+package: Asocolderma
+core_version_requirement: '^9 || ^10'
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_drupal
+  - drupal:migrate_plus
+  - drupal:migrate_tools
+  - drupal:node
+  - drupal:taxonomy

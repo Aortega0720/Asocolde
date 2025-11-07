@@ -1,0 +1,5 @@
+services:
+  asocol_migrate.migration_node_article_subscriber:
+    class: Drupal\asocol_migrate\EventSubscriber\NodeMigrateSubscriber
+    tags:
+      - { name: event_subscriber }

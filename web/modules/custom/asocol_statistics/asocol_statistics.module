@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for node entities.
+ */
+function asocol_statistics_user_view(array &$build, Drupal\user\UserInterface $account, Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if (!$account->isNew() && $view_mode == 'full') {
+    $build['#attached']['library'][] = 'asocol_statistics/asocol_statistics.statistics';
+    $settings = ['data' => ['uid' => $account->id()], 'url' => \Drupal::request()->getBasePath() . '/' . \Drupal::service('extension.list.module')->getPath('asocol_statistics') . '/statistics.php'];
+    $build['#attached']['drupalSettings']['asocol_statistics'] = $settings;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function asocol_statistics_theme($existing, $type, $theme, $path) {
+  return [
+    'dermatologist_statistics' => [
+      'variables' => [
+        'user_link' => NULL,
+        'years' => [],
+        'years_statistics' => [],
+        'year_current' => NULL,
+        'year_before' => NULL,
+        'year_total' => NULL,
+        'total' => NULL,
+      ],
+    ],
+  ];
+}

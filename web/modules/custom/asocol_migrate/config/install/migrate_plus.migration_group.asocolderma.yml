@@ -1,0 +1,23 @@
+id: asocolderma
+
+label: 'Import from previous site (Drupal 7)'
+
+description: 'Migrations from the previous Drupal 7 website.'
+
+# Short description of the type of source, e.g. "Drupal 6" or "WordPress".
+source_type: 'Drupal 7'
+
+# Configure the source database
+shared_configuration:
+  source:
+    # replace this by a databases key in settings.php or drush arguments.
+    key: asocol_d7
+
+# By default, configuration entities (like this migration) are not automatically
+# removed when the migration which installed them is uninstalled. To have your
+# migrations uninstalled with your migration module, add an enforced dependency
+# on your module.
+dependencies:
+  enforced:
+    module:
+      - asocol_migrate

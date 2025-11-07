@@ -1,0 +1,59 @@
+// ==========================================================================
+// Importación de la typografia
+// ==========================================================================
+
+@font-face {
+  font-family: 'iconFont';
+  src:  url('../assets/fonts/iconFont/iconFont.eot');
+  src:  url('../assets/fonts/iconFont/iconFont.eot') format('embedded-opentype'),
+    url('../assets/fonts/iconFont/iconFont.ttf') format('truetype'),
+    url('../assets/fonts/iconFont/iconFont.woff') format('woff'),
+    url('../assets/fonts/iconFont/iconFont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../assets/fonts/trebuchetMS/TrebuchetMS-Italic.woff2') format('woff2'),
+      url('../assets/fonts/trebuchetMS/TrebuchetMS-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../assets/fonts/trebuchetMS/TrebuchetMS.woff2') format('woff2'),
+      url('../assets/fonts/trebuchetMS/TrebuchetMS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../assets/fonts/trebuchetMS/TrebuchetMS-Bold.woff2') format('woff2'),
+      url('../assets/fonts/trebuchetMS/TrebuchetMS-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Trajan';
+  src: url('../assets/fonts/trajan/TrajanPro3-Regular.woff2') format('woff2'),
+      url('../assets/fonts/trajan/TrajanPro3-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trajan';
+  src: url('../assets/fonts/trajan/TrajanPro3-Bold.woff2') format('woff2'),
+      url('../assets/fonts/trajan/TrajanPro3-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

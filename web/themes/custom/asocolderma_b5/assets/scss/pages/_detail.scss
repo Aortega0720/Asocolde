@@ -1,0 +1,245 @@
+.page-node-type-article,
+.page-node-type-video,
+.page-node-type-skin-illness,
+.page-node-type-gallery{
+    .body-content{
+        .field--name-node-post-date,
+        .field--name-field-type{
+            color:color(grayscale,400);
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+        .field--name-field-type{
+            border-right: 1px solid color(grayscale,400);
+            font-family: $font-secondary;
+            line-height: 1.5rem;
+            margin-right: .5rem;
+            padding-right: 1rem;
+        }
+        .field--name-field-image{
+            margin:1.5rem 0;
+        }
+        .field--name-node-title {
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+            padding-left: 3rem;
+            position: relative;
+            &:before{
+                content: "\e939";
+                font-family: $font-icon;
+                font-size: 2rem;
+                left: 0;
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+            }
+            h1,
+            h2{
+                font-family: $font-secondary;
+                font-size: 1.6rem;
+                font-weight: normal;
+                line-height: 1.8rem;
+                margin: 0;
+            }
+        }
+        .field--name-node-author{
+            border-bottom:1px solid var(--main-color);
+            border-top:1px solid var(--main-color);
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+            .field__label{
+                font-family: $font-secondary;
+                font-weight: normal;
+            }
+        }
+        .field--name-body {
+            iframe{
+                width: 100%;
+            }
+            p{
+                margin-bottom: 1rem;
+            }
+            ul{
+                li{
+                    list-style: disc;
+                }
+            }
+            ol{
+                li{
+                    list-style: decimal;
+                }
+            }
+            ol,ul{
+                margin:2rem 0;
+                padding: 0 2rem;
+                li{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        .field--name-field-media-oembed-video {
+            margin:1.5rem 0;
+            position: relative;
+            iframe{
+                height: auto;
+                width: 100%;
+            }
+        }
+        .field--name-field-tags{
+            box-shadow: 0px 1px 5px 0px #cccccc;
+            background-color: color(backgrounds,50);
+            border-bottom: 1px color(backgrounds,50);
+            display: flex;
+            margin: 2.5rem 0;
+            padding: 2rem 1.5rem;
+            .field__label{
+                color:var(--main-color);
+            }
+            a{
+                color:color(grayscale,black);
+            }
+        }
+    }
+}
+.page-node-type-skin-illness{
+    .block-page-title-block{
+        display: none;
+    }
+    .body-content{
+        padding: 0 04rem;
+    }
+}
+.block-system-main-block{
+    .node--type-article{
+        .field--type-text-with-summary {
+            img{
+                height: auto;
+                max-width: 100%;
+            }
+        }
+    }
+}
+.block-views-blockmicrosites-block,
+div[class*="block-views-blockmicrosites-block"]{
+    display: none;
+    .more-link{
+        a{
+            @extend %btn-outline-arrow-primary;
+        }
+    }
+}
+.content-bottom-page{
+    margin-top: 2.5rem;
+    padding: 0 1.6rem;
+}
+/*.field--name-dynamic-block-fieldnode-content-related {
+    background: color(backgrounds,200);
+    .field__label{
+        font-family: $font-secondary;
+        font-size: 1.6rem;
+        font-weight: normal;
+        padding: 1rem 1.5rem;
+    }
+    .field__item{
+        background: var(--main-color-100);
+        padding: 1.5rem;
+    }
+}*/
+@include mq-min(md){
+    .slick--optionset--carousel-microsites {
+        display: block;
+    }
+    .block-views-blockmicrosites-block,
+    div[class*="block-views-blockmicrosites-block"]{
+        background: color(complementary,50);
+        display: block;
+        padding: 2rem;
+        position: relative;
+        h2{
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            padding-right: 10rem;
+            padding-top: 1rem;
+        }
+        .more-link{
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+        }
+        .slick__arrow {
+            .slick-arrow{
+                &.slick-prev{
+                    left: -1rem;
+                }
+                &.slick-next{
+                    right: -1rem;
+                }
+            }
+        }
+        .views-field-field-image{
+            img{
+                display: block;
+                height: auto;
+                margin:0;
+                width: 100%;
+            }
+        }
+        .slide{
+            border-right: 1px solid var(--main-color);
+            margin-right: 1rem;
+            padding-right: 1rem;
+            .slide__caption{
+                padding: 0;
+            }
+            &.slick-next{
+                padding: 0;
+            }
+        }
+        .views-field-title{
+            margin-top: 1rem;
+            text-align: center;
+            a{
+                color:color(grayscale,black);
+            }
+        }
+        .view-microsites {
+            .view-content{
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    }
+    .page-node-type-video,
+    .page-node-type-article,
+    .page-node-type-gallery  {
+        .body-content {
+            .field--name-field-media-oembed-video {
+                iframe{
+                    height: 355px;
+                }
+            }
+        }
+    }
+}
+@include mq-min(lg){
+    .page-node-type-article,
+    .page-node-type-video,
+    .page-node-type-skin-illness,
+    .page-node-type-gallery{
+        .body-content{
+            padding-top: 2rem;
+        }
+    }
+    .page-node-type-skin-illness{
+        .main-content{
+            padding-left: 1.6rem;
+        }
+        .body-content{
+            padding: 2rem 0 4rem;
+            .accesibility-options{
+                margin:0;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}

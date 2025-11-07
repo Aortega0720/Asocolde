@@ -1,0 +1,42 @@
+a, button {
+   color: var(--main-color);
+	text-decoration: none;
+	outline: 0;
+   transition: color .1s ease-out;
+   &.button {
+      &:hover {
+         text-decoration: none;
+      }
+   }
+	&:hover, &:focus {
+      color: var(--main-color);
+      outline: none;
+      @include mq-max(sm){
+         text-decoration: none;
+      }
+   }
+}
+
+.links{
+   font-weight: bold;
+   text-decoration: underline;
+}
+.link{
+   color:var(--main-color);
+   display: inline-block;
+   font-weight: 600;
+   padding: 1rem;
+   transition: all .5s;
+   span[class*="icon-"]{
+      display: inline-block;
+      font-size: 1.8rem;
+      margin-left: 1rem;
+      position: relative;
+      vertical-align: middle;
+   }
+   &:hover,
+   &:focus{
+      color:color(secondary,800);
+      text-decoration: none;
+   }
+}

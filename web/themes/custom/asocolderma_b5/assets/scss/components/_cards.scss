@@ -1,0 +1,411 @@
+.block-views-blockarticles-block-home-dermatologist,
+.block--type-newspaper,
+.block-views-blockarticles-block-academic{
+    border-top: 1px solid var(--main-color);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.6rem;
+    padding: 1.5rem;
+}
+.block--type-newspaper,
+.block-views-blockarticles-block-gremial-list,
+.block-views-blockarticles-block-academic-list{
+    .views-row{
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+    }
+}
+.block--type-newspaper,
+.block-views-blockarticles-block-slider-gremial,
+.block-views-blockarticles-block-slider-academic,
+.block-views-blockpatient-articles-block-slide-articles-other,
+.block-views-blockarticles-block-slider-gallery,
+.block-views-blockarticles-block-slider-videos,
+.block-views-blockpatient-articles-block-slider-asocolderma{
+    position: relative;
+    width: 100%;
+    h2{
+        font-size: 1.4rem;
+        padding: .5rem .5rem .8rem;
+        padding-right: 10rem;
+    }
+}
+
+.block-views-blockpatient-articles-block-slide-articles-other,
+.block-views-blockarticles-block-slider-gallery,
+.block-views-blockarticles-block-slider-videos,
+.block-views-blockarticles-block-slider-academic,
+.block-views-blockarticles-block-slider-gremial,
+.block-views-blockpatient-articles-block-slider-asocolderma{
+    border-top:1px solid color(tertiary,600);
+    h2{
+        padding: 1rem .5rem;
+        padding-right: 10rem;
+    }
+}
+.block--type-newspaper{
+    padding: 0;
+    h2{
+        padding: 1rem .5rem;
+        padding-right: 10rem;
+    }
+    
+}
+.view-newspaper-slider ,
+.block-views-blockarticles-block-slider-videos{
+    .slide__media{
+        position: relative;
+        &:after{
+            align-items: center;
+            background: hex-to-rgba(color(grayscale,black),.5);
+            border-radius: 100%;
+            color:color(grayscale,white);
+            content: "\e949";
+            display: flex;
+            font-family: $font-icon;
+            font-size: 4rem;
+            height: 6rem;
+            justify-content: center;
+            left: 50%;
+            opacity: .5;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 6rem;
+        }
+        a{
+            position: relative;
+            &:after{
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+    }
+}
+.view-newspaper-slider{
+    .slide__media{
+        &:after{
+            content: "\e94a";
+        }
+    }
+}
+.block-views-blockarticles-block-slider-gremial,
+.block-views-blockpatient-articles-block-slide-articles-other{
+    border-top-color: var(--main-color);
+}
+.view-patient-articles,
+.view-newspaper-slider,
+.view-articles {
+    display: flex;
+    flex-direction: column;
+    &.view-id-newspaper_slider,
+    &.view-id-patient_articles,
+    &.view-display-id-block_slider_gallery ,
+    &.view-display-id-block_slider_videos,
+    &.view-display-id-block_slider_asocolderma,
+    &.view-display-id-block_slider_academic ,
+    &.view-display-id-block_slider_gremial {
+        display: block;
+        .view-content{
+            margin:0 auto;
+            padding: .5rem 0;
+            width: 100%;
+            .slick__slide{
+                position: relative;
+                .slide__caption{
+                    background: hex-to-rgba(color(grayscale,black),.7);
+                    bottom: .5rem;
+                    font-size: 1.4rem;
+                    left: 0;
+                    padding: .5rem;
+                    position: absolute;
+                    top:inherit;
+                    width: 100%;
+                    z-index: 1;
+                }
+                .views-field-field-title,
+                .views-field-field-subtitle,
+                .views-field-title{
+                    line-height: 1.7rem;
+                    font-weight: bold;
+                    a{
+                        color:color(grayscale,white);
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .slide__description{
+                    color:color(grayscale,white);
+                    padding-right: 10rem;
+                    position: relative;
+                    .views-field-created{
+                        opacity: 0.8;
+                    }
+                    .views-field-field-social-share{
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 2;
+                        &:hover,
+                        &:focus{
+                            .field-content{
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        .field-content{
+                            opacity: 0;
+                            position: relative;
+                            visibility: hidden;
+                            .block-social-media {
+                                background: color(grayscale,white);
+                                border-radius: 1rem;
+                                padding: .5rem;
+                                position: absolute;
+                                right: 0;
+                                top: -6.5rem;
+                                &:after{
+                                    bottom: -.7rem;
+                                    content: '';
+                                    width: 0;
+                                    height: 0;
+                                    border-width: 0 10px 10px 10px;
+                                    border-color: transparent transparent white transparent;
+                                    border-style: solid;
+                                    position: absolute;
+                                    transform: rotate(180deg);
+                                    right: .5rem;
+                                }
+                            }
+                        }
+                    }
+                    .views-label-field-social-share{
+                        background: color(secondary,500);
+                        border-radius: 2rem;
+                        color:color(grayscale,white);
+                        cursor: pointer;
+                        display: inline-block;
+                        padding: .2rem .5rem;
+                        &:after{
+                            content: "\e948";
+                            font-family: $font-icon;
+                            margin-left: .5rem;
+                        }
+                    }
+                }
+            }
+            .slick__arrow{
+                .slick-arrow{
+                    background: transparent;
+                    &:before{
+                        color:hex-to-rgba(color(grayscale,black),.6);
+                        font-size: 3rem;
+                    }
+                }
+            }
+            .slide__media{
+                .media{
+                    padding: 0!important;
+                }
+                img{
+                    height: 250px;
+                    position: static;
+                    width: 100%;
+                    @include prefix(object-fit , cover, webkit moz o ms);
+                    @include prefix(object-position , left, webkit moz o ms);
+                }
+            }
+        }
+        .more-link{
+            position: absolute;
+            right: .5rem;
+            top: 0.5rem;
+            a{
+                @extend %btn-outline-arrow-primary;
+                font-size: 1.4rem;
+                padding: .4rem;
+                padding-bottom: .2rem;
+            }
+        }
+    }
+    &.view-display-id-block_slider_academic ,
+    &.view-display-id-block_slider_gallery ,
+    &.view-display-id-block_slider_videos,
+    &.view-display-id-block_slider_asocolderma{
+        .view-content {
+            .slick__slide {
+                .slide__description {
+                    .views-label-field-social-share{
+                        background: color(tertiary,600);
+                    }
+                }
+            }
+        }  
+        .more-link{
+            a{
+                color:color(tertiary,600);
+                border-color: color(tertiary,600);
+                &:hover,
+                &:focus{
+                    background: color(tertiary,600);
+                    color:color(grayscale,white);
+                }
+            }
+        } 
+    }
+    &.view-display-id-page_tips{
+        .views-row{
+            border-bottom: 1px solid var(--main-color);
+            padding: 1.5rem;
+            &:nth-child(2n){
+                background: color(backgrounds,200);
+            }
+            &:last-child{
+                border-bottom: 0;
+            }
+            .field--name-field-image{
+                margin-bottom: 1rem;
+                img{
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+        .bs-region--right{
+            align-items: flex-start;
+            align-content: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            .field--name-node-title,
+            .field--name-body{
+                width: 100%;
+            }
+            .field--name-node-title{
+                h2{
+                    font-family: $font-primary;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    line-height: 1.6rem;
+                    text-transform: inherit;
+                    a{
+                        color:var(--main-color);
+                        &:hover,
+                        &:focus{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .field--name-field-type{
+                border-right: 1px solid color(grayscale,400);
+                font-family: $font-secondary;
+                font-size: 1.2rem;
+                line-height: 2rem;
+                margin-bottom: .5rem;
+                margin-right: 1rem;
+                padding-right: 1rem;
+                text-transform: uppercase;
+                &:before{
+                    content: "\e939";
+                    font-family: $font-icon;
+                    font-size: 1.5rem;
+                    margin-right: .5rem;
+                    vertical-align: middle;
+                }
+            }
+            .field--name-node-post-date{
+                font-size: 1.2rem;
+                margin-bottom: .2rem;
+            }
+        }
+    }
+    .view-content{
+        order:2;
+        h2{
+            @extend %subtitle;
+            a{
+                color:color(grayscale,black);
+                &:hover,
+                &:focus{
+                    color:var(--main-color);
+                }
+            }
+        }
+        .field--name-field-type{
+            margin-bottom: 1.5rem;
+        }
+        .field--name-field-image{
+            margin-bottom: 1rem;
+            img{
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+        }
+        .field--name-field-tags,
+        .field--name-field-social-share{
+            display: inline-block;
+            vertical-align: middle;
+            width: 48%;
+        }
+    }
+    .pager{
+        order: 3;
+    }
+    .more-link{
+        order:1;
+    }
+    .field--name-field-tags{
+        font-size: 1.4rem;
+        .field__label{
+            padding-right: .2rem;
+            text-transform: uppercase;
+        }
+        .field__label,
+        .field__items,
+        .field__item{
+            display: inline;
+            float: inherit;
+        }
+    }
+    .social-media-sharing{
+        text-align: right;
+        ul{
+            justify-content: center;
+            li{
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.view-newspaper-slider{
+    &.view-id-newspaper_slider{
+        .view-content{
+            padding: 0;
+        }
+    }
+}
+@include mq-min(md){
+    .view-articles{
+        &.view-display-id-page_tips {
+            .views-row {
+                .bs-region--left{
+                    width: 13rem;
+                }
+                .bs-region--right{
+                    width: calc(100% - 13rem);
+                }
+            }
+        }
+    }
+}

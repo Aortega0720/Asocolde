@@ -1,0 +1,46 @@
+<div class="pre-form">
+  <div class="pre-form__top">
+    {{ drupal_block('text_resize_block') }}
+    <div class="pre-form__status">
+        <span>Estado de afiliación:</span>
+        <span class="text">NO VERIFICADO</span>
+        <a class="btn btn--primary" href="/usuario/estado-afiliacion">Resumen</a>
+    </div>
+  </div>
+</div>
+<h1 class="title-recertificacion">Estado de Re-certificación Interna</h1>
+<div class="body-recertificacion">
+  <p>AsoColDerma hace parte del Concejo Colombiano de Acreditación y Re certificación Médica <a href="http://www.camec.co" target="_blank" title="(CAMEC)">(CAMEC)</a> e internamente ofrecemos beneficios a nuestros Asociados, quienes hayan alcanzado puntos específicos por participar en los diferentes eventos y publicaciones de AsoColDerma. Recuerde que estos puntos también le serviran para completar sus puntajes en el CAMEC, en caso de que voluntariamente desee hacer parte del programa de Re certificación.</p>
+</div>
+<div class="links-recertificacion">
+  <div class="link-beneficios-recertificacion">
+    <a href="/beneficios-por-puntaje-alcanzado">Reglamento del programa de re-certificación</a>
+  </div>
+</div>
+<div class="content-recertificacion">
+  {% for item in items %}
+    <div class="group-item">
+      <div class="title-section">{{ item.title }}</div>
+      <div class="subtitle-section">Puntos obtenidos</div>
+      <div class="points-section">
+        <div class="field-name">{{ item.field_name }}</div>
+        <div class="points">{{ item.points }}</div>
+        <div class="help">
+          <div class="content">
+            <p>Si aparece el logotipo del CAMEC<span class="icon-camec"></span> en la categoría, quiere decir que los puntajes establecidos son iguales y serán tenidos en cuenta para el programa de re-certificación CeVDerm.</p>  
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<div class="total-points">
+  <div class="title-points">Total Puntos:</div>
+  <div class="points">{{ points }}</div>
+</div>
+<div class="text-points">
+  <p>Para cualquier reclamación o rectificación en los puntajes obtenidos, comuníquese con nosotros al correo: <a href="mailto:acdermatologia@asocolderma.com">acdermatologia@asocolderma.com</a></p>
+</div>
+<div class="link-beneficios-recertificacion">
+  <a href="/beneficios-por-puntaje-alcanzado">Reglamento del programa de re-certificación</a>
+</div>

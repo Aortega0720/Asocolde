@@ -1,0 +1,7 @@
+name: Asocolderma Statistics
+type: module
+description: Dermatologist statistics.
+package: Asocolderma
+core_version_requirement: '^9 || ^10'
+dependencies:
+  - drupal:user

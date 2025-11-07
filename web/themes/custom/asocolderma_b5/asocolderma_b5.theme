@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @file
+ * asocolderma_B5 theme file.
+ */
+
+/**
+ * Preprocess variables for html templates.
+ * @param $variables
+ */
+function asocolderma_b5_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // dpm($node);
+  // Check for a node.
+  if ($node instanceof \Drupal\node\NodeInterface
+    && $node->hasField('field_body_class')
+    && !$node->field_body_class->isEmpty()) {
+      $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::cleanCssIdentifier($node->field_body_class->getString());
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ *
+ */
+function asocolderma_b5_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+  $views_top_link_more = _get_views_top_link_more();
+  if(in_array($view->id(), array_keys($views_top_link_more)) &&
+    in_array($view->current_display, $views_top_link_more[$view->id()])) {
+      $variables['title'] = $view->getTitle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views template suggestions.
+ *
+ * @inheritdoc
+ */
+function asocolderma_b5_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  $views_top_link_more = _get_views_top_link_more();
+  if(in_array($view->id(), array_keys($views_top_link_more)) &&
+    in_array($view->current_display, $views_top_link_more[$view->id()])) {
+      $suggestions[] = 'views_view__top__link_more';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function asocolderma_b5_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  switch($variables['element']['#form_id']) {
+    case 'user_login_form':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_login';
+      break;
+    case 'user_pass':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_pass';
+      break;
+    case 'user_register_form':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_register';
+      break;
+    case 'user_private_form':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_private';
+      break;
+    case 'user_public_form':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_public';
+      break;
+    case 'user_services_form':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_services';
+      break;
+    case 'user_configuration_form':
+      $suggestions[] = $variables['theme_hook_original'] . '__user_configuration';
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for user_services form.
+ */
+function asocolderma_b5_preprocess_form__user_services(&$variables) {
+  if ($account = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id())) {
+    $variables['user_link'] = $account->toLink('Vista actual de mi perfil');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for user_services form.
+ */
+function asocolderma_b5_preprocess_form__user_public(&$variables) {
+  if ($account = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id())) {
+    $variables['user_link'] = $account->toLink('Vista actual de mi perfil')->toRenderable();
+    $variables['user_link']['#attributes']['class'][] = 'btn btn--primary';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function asocolderma_b5_preprocess_block(&$variables) {
+  // adding custom attribute class for block
+  if ($variables['elements']['#base_plugin_id'] == 'block_content') {
+    $blockType = strtr($variables['content']['#block_content']->bundle(), '_', '-');
+    $variables['attributes']['class'][] = 'block--type-' . $blockType;
+  }
+}
+
+function _get_views_top_link_more() {
+  return [
+    'patient_articles' => [
+      'block_other_news',
+      'block_home_asocolderma',
+    ],
+    'articles' => [
+      'block_academic',
+      'block_home_dermatologist',
+    ],
+    'events_carousel' => [
+      'block_dermatologist_home',
+      'block_patient',
+    ],
+    'top_skin_illness' => [
+      'block_top_2',
+    ],
+    'comite_editorial' => [
+      'block',
+    ],
+  ];
+}

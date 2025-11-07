@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function asocol_statistics_schema() {
+  $schema['dermatologist_statistics'] = array(
+      'description' => 'The table for adding statistics',
+      'fields' => array(
+        'uid' => array(
+          'description' => 'The User ID.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ),
+        'month' => array(
+          'description' => 'The statistics for month of the dermatologist statistics entity.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ),
+        'year' => array(
+          'description' => 'The year of the dermatologist statistics entity.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ),
+        'total' => array(
+          'description' => 'The total number of times the {node} has been viewed.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+          'default' => 1,
+        ),
+      ),
+      'primary key' => ['uid', 'month', 'year'],
+    );
+
+    return $schema;
+}

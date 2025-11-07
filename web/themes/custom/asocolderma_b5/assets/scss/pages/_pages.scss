@@ -1,0 +1,306 @@
+
+.wrapper-body{
+    padding: 0;
+    z-index: 0;
+}
+.body-content{
+    padding: 0 0 4rem;
+    .region-content{
+      padding: 0;
+    }
+}
+.hide-title{
+    .block-page-title-block{
+        display: none;
+    }
+}
+.main-container-page{
+    &.container{
+      padding: 0;
+    }
+    .main-content{
+      --bs-gutter-x: 1.6rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+}
+.wrapper-body--main{
+    margin-bottom: 4rem;
+    .main-content{
+        padding: 0 1rem;
+    }
+}
+.sidebar-right {
+    margin:2rem 0;
+    padding: 0;
+}
+.region-sidebar-second{
+    padding: 0;
+}
+.path-frontpage {
+    .body-content{
+        padding: 0;
+    }
+}
+.path-enfermedades-dermatologicas,
+.path-contenido-academico{
+    .block-page-title-block{
+        display: none;
+    }
+}
+.block-asocol-search-dermatologist{
+    background: var(--main-color);
+    color:color(grayscale, white);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    h2{
+        border-bottom:1px solid color(grayscale,white);
+        font-size: 1.9rem;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    a{
+        color:color(grayscale,white);
+        text-decoration: underline;
+    }
+    form{
+        padding: 2rem 2rem 0;
+        .form-item-text {
+            position: relative;
+            &:after{
+                color:var(--main-color);
+                content: "\e91c";
+                font-family: $font-icon;
+                font-size: 1.5rem;
+                left: 1.2rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .form-control{
+                padding-left: 3.5rem;
+            }
+        }
+        .form-control{
+            border-radius: 2rem;
+            height: 3rem;
+        }
+        .button{
+            border-color: color(grayscale,white);
+            color:color(grayscale,white);
+            &:hover,
+            &:focus{
+                background: color(grayscale,white);
+                color:var(--main-color);
+            }
+        }
+    }
+}
+.page-node-type-page{
+    .body-content{
+        padding: 2rem 0 1.6rem;
+    }
+    .field--name-node-title {
+        text-align: center;
+        h1{
+            font-size: 2rem;
+            line-height: inherit;
+            margin:1.5rem 0;
+        }
+    }
+    .node--type-page{
+        .field--name-body {
+            img{
+                height: auto;
+                max-width: 100%;
+            }
+            table{
+                margin:2rem 0;
+                tbody{
+                    max-width: 100%;
+                    overflow: hidden;
+                }
+                tr,
+                td{
+                    vertical-align: middle;
+                }
+                td{
+                    padding: .5rem;
+                }
+            }
+            ul,ol{
+                padding-left: 2rem;
+            }
+        }
+    }
+}
+.path-preguntas-frecuentes-al-dermatologo,
+.path-tips-del-dermatologo,
+.path-top-enfermedades-piel{
+    .body-content{
+        padding-top: 2rem;
+    }
+}
+.page-sitemap{
+    .bs-region--main{
+        .field--name-node-title {
+            h1{
+                font-size: 20px;
+                font-weight: 400;
+                margin: 2rem 0 1.5rem 0;
+            }
+        }
+        .field--name-body {
+            a{
+                color:#337ab7;
+                &:hover,
+                &:focus{
+                    color:#23527c;
+                }
+            }
+            ul{
+                li{
+                    list-style:disc;
+                }
+            }
+        }
+    }
+}
+.view-id-fq {
+    .text-top{
+        text-align: center;
+        p{
+            margin-bottom: 1rem;
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
+    .view-content{
+        .views-row{
+            display: flex;
+            flex-direction: column;
+            a{
+                word-break: break-all;
+            }
+            .views-field-body{
+                background:#e0e0e0;
+                display: flex;
+                flex-direction: column;
+                margin: 0 -1.6rem 1.5rem;
+                width: calc(100% + 3.2rem);
+                padding: 2rem;
+                .views-label{
+                    line-height: 1.8rem;
+                    text-align: center;
+                    &:before{
+                        content: "\e942";
+                        display: block;
+                        font-family: $font-icon;
+                        font-size: 4rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+                .field-content{
+                    text-align: center;
+                    .category{
+                        &:before{
+                            content: "\e92e";
+                            font-family: $font-icon;
+                            margin-right: .5rem;
+                            vertical-align: -.2rem;
+                        }
+                    }
+                }
+            }
+            .views-field-field-answer{
+                margin-bottom: 2rem;
+                text-align: center;
+                .views-label-field-answer{
+                    &:before{
+                        content: "\e941";
+                        display: block;
+                        font-family: $font-icon;
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mq-max(md){
+    .page-sitemap {
+        .body-content{
+            margin-top: 2rem;
+            padding: 0rem 0.8rem 3rem;
+        }
+    }
+}
+@include mq-min(md){
+    .path-contenido-academico{
+        .body-content{
+            padding: 2rem 0 4rem;
+        }
+    }
+    .view-id-fq {
+        .view-content {
+            .views-row {
+                .views-field-body{
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 2rem 1.6rem;
+                    .views-label{
+                        width: 150px;
+                        &:before{
+                            font-size: 3rem;
+                        }
+                    }
+                    .field-content{
+                        border-left: 1px solid #ccc;
+                        padding-left: 2rem;
+                        text-align: left;
+                        width: calc(100% - 150px);
+                    }
+                }
+                .views-field-field-answer{
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    .views-label{
+                        width: 150px;
+                        &:before{
+                            font-size: 3rem;
+                        }
+                    }
+                    .field-content{
+                        border-left: 1px solid #ccc;
+                        padding-left: 2rem;
+                        text-align: left;
+                        width: calc(100% - 150px);
+                    }
+                }
+            }
+        }
+    }   
+}
+@include mq-min(lg){
+    .wrapper-body--main {
+        .main-content{
+            padding: 0;
+        }
+    }
+    .sidebar-right{
+        margin-top: 0;
+        padding-left: 1.6rem;
+    }
+    .path-enfermedades-dermatologicas,
+    .path-contenido-academico,
+    .path-dermatologos{
+        .main-container-page {
+            .main-content{
+                padding-left: 1.5rem;
+            }
+        }
+    }
+}

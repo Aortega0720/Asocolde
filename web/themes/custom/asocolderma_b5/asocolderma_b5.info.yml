@@ -1,0 +1,35 @@
+name: Asocolderma B5
+type: theme
+description: 'asocolderma_B5 subtheme based on Bootstrap 5 theme.'
+core_version_requirement: '^9.4 || ^10'
+'base theme': bootstrap5
+libraries:
+  - asocolderma_b5/global-styling
+ckeditor_stylesheets:
+  - css/style.css
+ckeditor5-stylesheets:
+  - css/ck5style.css
+regions:
+  header_scroll: Scroll Header
+  header: Header
+  nav_branding: 'Navigation branding region'
+  searcher: 'Search region'
+  nav_main: 'Main navigation region'
+  sidebar_first: 'Sidebar first'
+  menu_sidebar_first: 'Menu Sidebar first'
+  sidebar_second: 'Sidebar second'
+  content_top: 'Content Top Page'
+  content_column_top_left: 'Content column top left'
+  content_column_top_right: 'Content column top right'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  content_bottom: 'Content Bottom Page'
+  footer_top_left: Footer top Left
+  footer_top_right: Footer top Right
+  footer_bottom_left: Footer Bottom Left
+  footer_bottom_right: Footer Bottom Right
+  footer_ads: Footer Ads
+bootstrap5/global-styling:
+  css:
+    theme:
+      css/style.css: 'false'

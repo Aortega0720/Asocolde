@@ -1,0 +1,83 @@
+// Displays
+$dflexs: flex, inline-flex, block, inline-block, grid, none;
+@each $dflex in $dflexs {
+   .dc-#{$dflex} {
+      display: $dflex;
+   }
+}
+
+@include mq-min(sm) {
+   $d-sm: flex, block, grid, none, inline-block;
+   @each $d-sm in $d-sm {
+      .dc-sm-#{$d-sm} {
+         display: $d-sm;
+      }
+   }
+}
+
+@include mq-min(md) {
+   $d-md: flex, block, grid, none, inline-block;
+   @each $d-md in $d-md {
+      .dc-md-#{$d-md} {
+         display: $d-md;
+      }
+   }
+}
+
+@include mq-min(lg) {
+   $d-lg: flex, block, grid, none, inline-block;
+   @each $d-lg in $d-lg {
+      .dc-lg-#{$d-lg} {
+         display: $d-lg;
+      }
+   }
+}
+
+@include mq-min(xl) {
+   $d-xl: flex, block, grid, none, inline-block;
+   @each $d-xl in $d-xl {
+      .dc-xl-#{$d-xl} {
+         display: $d-xl;
+      }
+   }
+}
+
+// Flex Flow Direction : applies to flex containers
+$directions: row, row-reverse, column, column-reverse;
+@each $dflex in $directions {
+   .fdc-#{$dflex} {
+      display: $dflex;
+   }
+}
+
+// Axis Alignment : applies to flex containers
+$justifys: flex-start, flex-end, center, space-between, space-around, space-evenly;
+@each $justify in $justifys {
+   .jcc-#{$justify} {
+      justify-content: $justify;
+   }
+}
+
+// Cross-axis Alignment : applies to flex containers
+$aligns: flex-start, flex-end, center, baseline, stretch;
+@each $align in $aligns {
+   .aic-#{$align} {
+      align-items: $align;
+   }
+}
+
+// Packing Flex Lines : applies to multi-line flex containers
+$aligns: flex-start, flex-end, center, space-between, space-around, stretch;
+@each $align in $aligns {
+   .acc-#{$align} {
+      align-content: $align;
+   }
+}
+
+// Cross-axis Alignment : applies to flex items
+$aligns: flex-start, flex-end, center, baseline, stretch;
+@each $align in $aligns {
+   .asc-#{$align} {
+      align-self: $align;
+   }
+}

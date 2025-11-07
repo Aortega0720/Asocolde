@@ -1,0 +1,429 @@
+
+*, 
+*:before, *:after {
+	box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-family: $font-primary;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: color(grayscale,black);
+  display: flex;
+  flex-direction: column;
+  font-size: map-get($sizes,base);
+	height: 100%;
+  margin-top: 5rem;
+  overflow-x: hidden;
+  &.home-page{
+    margin-top: 0;
+  }
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: bold;
+}
+.titles, .title{
+  @extend %titles;
+}
+.subtitle{
+  @extend %subtitle;
+  &--small{
+    font-size: map-get($sizes, thumb);
+  }
+}
+.block-page-title-block{
+    border-bottom: 1px solid color(grayscale,600);
+    border-top: 1px solid color(grayscale,600);
+    margin: 15px 0;
+    font-size: 1.9rem;
+    padding: 20px;
+    h1{
+      font-size: 1.9rem;
+      margin:0;
+    }
+}
+.block-system-breadcrumb-block{
+  padding: .8rem 0 1rem;
+}
+.slick__arrow{
+  .slick-arrow{
+    align-items: center;
+    background: color(grayscale,white);
+    color:var(--main-color);
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    width: 2.5rem;
+    &:before{
+      color:var(--main-color);
+      content: "\e902";
+      display: inline-block;
+      font-family: $font-icon;
+      font-size: 2rem;
+    }
+    &.slick-next{
+      &:before{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.slick-dots{
+  display: flex;
+  justify-content: center;
+  li{
+    margin:0 .5rem;
+    &.slick-active{
+      button{
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+    }
+    button{
+      background: color(tertiary,500);
+      border-radius: 100%;
+      border:0;
+      font-size: 0;
+      height: .8rem;
+      padding: 0;
+      transition: .5s all;
+      width: .8rem;
+      &:hover{
+        background: color(tertiary,200);
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+    }
+  }
+}
+.breadcrumb-content{
+  display: none;
+  ol{
+    font-size: 1.4rem;
+    li{
+      align-items: center;
+      display: flex;
+      &.breadcrumb-item{
+        padding-left: 0;
+        &:before{
+          content: none;
+        }
+      }
+      &:before{
+        content:none;
+      }
+      &:last-child{
+        &:after{
+          content: none;
+        }
+      }
+      &:after{
+        color:color(grayscale,600);
+        content: "\e902";
+        display: inline-block;
+        font-family: $font-icon;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+.pager{
+  margin-bottom: 4rem;
+  .page-item{
+    &.is-active{
+      a{
+        background: var(--main-color);
+        border-color: var(--main-color);
+        color:color(grayscale, white);
+      }
+    }
+    a{
+      border-color:color(grayscale,600);
+      color:var(--main-color);
+      font-size: 1.6rem;
+      min-width: 3.2rem;
+      padding: .4rem 1.1rem;
+    }
+    &.pager__item{
+      &--next,
+      &--first,
+      &--previous,
+      &--last{
+        a{
+          font-size: 0;
+          padding: .4rem 0;
+          text-align: center;
+          &:after{
+            content: '';
+            display: inline-block;
+            font-family: $font-icon;
+            font-size: 1.6rem;
+          }
+        }
+      }
+      &--first{
+        a{
+          &:after{
+            content: "\e911";
+            transform: rotate(-180deg);
+          }
+        }
+      }
+      &--previous{
+        a{
+          font-weight: bold;
+          &:after{
+            content: "\e902";
+          }
+        }
+      }
+      &--next{
+        a{
+          font-weight: bold;
+          &:after{
+            content: "\e902";
+            transform: rotate(-180deg);
+          }
+        }
+      }
+      &--last{
+        a{
+          &:after{
+            content: "\e911";
+          }
+        }
+      }
+    }
+  }
+}
+#block-top-dermatologist{
+  & + .block-revive-adserver {
+    iframe{
+      height: 9rem;
+    }
+  }
+}
+.block-revive-adserver{
+  margin: 2rem 0;
+  text-align: center;
+  iframe{
+    height: auto;
+    width: 100%;
+  }
+  img{
+    display: block;
+    height: auto;
+    margin:0 auto;
+    max-width: 100%;
+  }
+  h2{
+    font-size: 1.3rem;
+  }
+}
+
+.social-media-sharing{
+  .share{
+    &:after{
+      content: "";
+      font-family: $font-icon;
+      font-size: 2rem;
+    }
+    img{
+      display: none;
+    }
+    &.facebook-share{
+      &:after{
+        content: "\e910";
+      }
+    }
+    &.linkedin{
+      &:after{
+        content: "\e908";
+      }
+    }
+    &.twitter{
+      &:after{
+        content: "\e918";
+      }
+    }
+    &.whatsapp{
+      &:after{
+        content: "\e90e";
+      }
+    }
+  }
+}
+@include mq-max(md){
+  body,
+  body.path-directorio-dermatologos{
+    .main-menu{
+      &__list {
+        ul, .navbar-nav  {
+          li,.nav-item{
+            &:nth-child(1) {
+              .nav-link, a{
+                background: var(--main-color-50);
+                border-bottom-color: color(primary,500);
+                border-bottom-width: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.user-logged-in,
+    &.path-directorio-dermatologos.user-logged-in {
+      .main-menu{
+        &__list {
+          ul, .navbar-nav  {
+            li,.nav-item{
+              &:nth-child(1) {
+                .nav-link, a{
+                  background: var(--main-color-50);
+                  border-bottom-color: color(secondary,500);
+                  border-bottom-width: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  body[class*="path-congresos"],
+  body.page-microsites,
+  body.page-node-type-event{
+    .main-menu{
+      &__list {
+        ul, .navbar-nav  {
+          li,.nav-item{
+            &:nth-child(1) {
+              .nav-link, a{
+                background: transparent;
+                border-bottom-color: #808080;
+                border-bottom-width: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include mq-min(md){
+  body,
+  body.path-directorio-dermatologos{
+    .main-menu{
+      &__list {
+        ul, .navbar-nav  {
+          li,.nav-item{
+            &:nth-child(1) {
+              .nav-link, a{
+                background: var(--main-color-50);
+                border-bottom-color: color(primary,500);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.user-logged-in,
+    &.path-directorio-dermatologos.user-logged-in{
+      .main-menu{
+        &__list {
+          ul, .navbar-nav  {
+            li,.nav-item{
+              &:nth-child(1) {
+                .nav-link, a{
+                  background: var(--main-color-50);
+                  border-bottom-color: color(secondary,500);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  body[class*="path-congresos"],
+  body.page-microsites,
+  body.page-node-type-event{
+    .main-menu{
+      &__list {
+        ul, .navbar-nav  {
+          li,.nav-item{
+            &:nth-child(1) {
+              .nav-link, a{
+                background: transparent;
+                border-bottom-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .view-microsites {
+    .views-row {
+      .layout{
+        align-items: center;
+        &__region{
+          &--first{
+            width: 30%;
+          }
+          &--second{
+            padding: 0 1rem;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}
+@include mq-min(lg){
+  .breadcrumb-content{
+    display: block;
+  }
+  body{
+    //margin-top: 5.8rem;
+  }
+  .body-content{
+    padding: 0;
+  }
+  .sidebar-right {
+    margin:0;
+  }
+  .wrapper-body--main{
+    padding: 0 0 0 1.5rem;
+  }
+  .region-sidebar-second,
+  .sidebar-right{
+    padding-right: 0;
+  }
+  .user-logged-in.path-usuario .main-content,
+  .main-content{
+    &.row__sidebar{
+      .body-content{
+        padding-right: 1.6rem;
+      }
+    }
+  }
+}
+@include mq-min(l){
+  .body-content{
+    padding: 0 0 4rem;
+  }
+  .wrapper-body--main{
+    padding: 0;
+  }
+  .block-page-title-block{
+    margin: 15px;
+  }
+  .block-system-breadcrumb-block{
+    padding: .8rem 1.5rem 1rem;
+  }
+}

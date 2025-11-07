@@ -1,0 +1,10 @@
+services:
+  asocol.route_subscriber:
+    class: Drupal\asocol\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  asocol.redirect_subscriber:
+    class: Drupal\asocol\EventSubscriber\RedirectAuthenticatedSubscriber
+    arguments: ['@current_user', '@path.matcher']
+    tags:
+      - { name: event_subscriber }

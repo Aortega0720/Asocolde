@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<div class="pre-form">
+  <div class="pre-form__top">
+    {{ drupal_block('text_resize_block') }}
+    <div class="pre-form__status">
+        <span>Estado de afiliación:</span>
+        <span class="text">NO VERIFICADO</span>
+        <a class="btn btn--primary" href="/usuario/estado-afiliacion">Resumen</a>
+    </div>
+  </div>
+</div>
+<div class="form-information border-b">
+  <h1>Actualizar datos privados</h1>
+  <div class="form-information__bottom">
+      <p>La siguiente información será para uso privado y exclusivo de AsoColDerma.
+        Esta información no se difundirá ni se publicará en el sitio Web.</p>
+  </div>
+</div>
+<form{{ attributes }}>
+  {{ children }}
+</form>

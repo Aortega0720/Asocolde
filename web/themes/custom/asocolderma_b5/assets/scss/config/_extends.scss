@@ -1,0 +1,133 @@
+
+%titles{
+    font-family: $font-primary;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    strong{
+        font-size: 4.5rem;
+    }
+}
+%subtitle{
+    font-family: $font-secondary;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: auto;
+}
+%h3{
+    font-family: $font-primary;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: auto;
+}
+%title-cards{
+    font-family: $font-primary;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+%btn-outline{
+    @include button( transparent, var(--main-color) );
+    border: .13rem solid var(--main-color);
+    display: inline-block;
+    padding: .7rem 1rem;
+    &:hover,
+    &:active {
+        background: var(--main-color);
+        color:color(grayscale,white);
+        text-decoration: none;
+    }
+    &.active{
+       border: .13rem solid var(--main-color);
+    }
+}
+
+%btn-outline-arrow{
+    @extend %btn-outline;
+    &:after{
+        content: "\e911";
+        font-family: $font-icon;
+        font-size: 1.4rem;
+        margin-left: .5rem;
+        vertical-align: middle;
+    }
+}
+
+%btn-outline-primary{
+    @include button( transparent, var(--main-color) );
+    border: .13rem solid var(--main-color);
+    display: inline-block;
+    padding: .7rem 1rem;
+    &:hover,
+    &:active {
+        background: var(--main-color);
+        color:color(grayscale,white);
+        text-decoration: none;
+    }
+    &.active{
+       border: .13rem solid var(--main-color);
+    }
+}
+
+%btn-outline-arrow-primary{
+    @extend %btn-outline-primary;
+    &:after{
+        content: "\e911";
+        font-family: $font-icon;
+        font-size: 1.4rem;
+        margin-left: .5rem;
+        vertical-align: middle;
+    }
+}
+%btn-outline-arrow-tertiary{
+    @extend %btn-outline-arrow-primary;
+    border-color: color(tertiary,600);
+    color: color(tertiary,600);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 0.6rem;
+    text-transform: uppercase;
+    &:after{
+        vertical-align: inherit;
+    }
+    &:hover,
+    &:focus{
+        background: color(tertiary,600);
+        color: color(grayscale,white);
+    }
+}
+%blockFluid{
+    left: -50.6vw;
+    margin-left: 50%;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+}
+@include mq-min(md){
+    %titles{
+        font-size: 4rem;
+        line-height: 4.5rem;
+        strong{
+            font-size: 6rem;
+        }
+    }
+    %h3{
+        font-size: 2.5rem;
+    }
+}
+@include mq-min(xl){
+    %titles{
+        font-size: 6rem;
+        line-height: 6.5rem;
+        strong{
+            font-size: 8rem;
+        }
+    }
+    %title-cards{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    %h3{
+        font-size: 1.8rem;
+    }
+}

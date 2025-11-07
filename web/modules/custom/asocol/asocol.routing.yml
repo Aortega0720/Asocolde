@@ -1,0 +1,75 @@
+asocol.user_public_page:
+  path: '/usuario/datos-publicos'
+  defaults:
+    _controller: '\Drupal\asocol\Controller\UserController::userEditPublicPage'
+    _title: 'Update public information'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+asocol.user_services_page:
+  path: '/usuario/servicios-especialidades'
+  defaults:
+    _controller: '\Drupal\asocol\Controller\UserController::userEditServicesPage'
+    _title: 'Update services'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+asocol.user_private_page:
+  path: '/usuario/datos-privados'
+  defaults:
+    _controller: '\Drupal\asocol\Controller\UserController::userEditPrivatePage'
+    _title: 'Update private information'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+asocol.user_configuration_page:
+  path: '/usuario/configuracion'
+  defaults:
+    _controller: '\Drupal\asocol\Controller\UserController::userEditConfigurationPage'
+    _title: 'Update account'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+asocol.user_certification_page:
+  path: '/usuario/re-certificacion'
+  defaults:
+    _controller: '\Drupal\asocol\Controller\UserController::userCertificationPage'
+    _title: 'Internal Recertification Status'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+asocol.user_membership_page:
+  path: '/usuario/estado-afiliacion'
+  defaults:
+    _controller: '\Drupal\asocol\Controller\UserController::userMembershipPage'
+    _title: 'Membership Status'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+asocol.notification_add:
+  path: '/admin/people/notifications/add'
+  defaults:
+    _controller: '\Drupal\eck\Controller\EckContentController::add'
+    _title: 'Add Notification'
+    eck_entity_type: 'notification'
+    eck_entity_bundle: 'notification'
+  requirements:
+    _eck_entity_create_access: '{eck_entity_type}'
+  options:
+    parameters:
+      eck_entity_type:
+        type: entity:eck_entity_type
+    _eck_operation_route: TRUE
+    _admin_route: TRUE
+asocol.membership_import:
+  path: '/admin/people/membership/import'
+  defaults:
+    _form: '\Drupal\asocol\Form\MembershipsImportForm'
+    _title: 'Import Memberships'
+  requirements:
+    _permission: 'administer users'
+  options:
+    _admin_route: TRUE
+asocol.user_statistics_import:
+  path: '/admin/people/statistics/import'
+  defaults:
+    _form: '\Drupal\asocol\Form\UserStatisticsImportForm'
+    _title: 'Import User Statistics'
+  requirements:
+    _permission: 'administer users'
+  options:
+    _admin_route: TRUE

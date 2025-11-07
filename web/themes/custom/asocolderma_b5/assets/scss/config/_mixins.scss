@@ -1,0 +1,207 @@
+// ==========================================================================
+// Anchos minimos (min-width) : @include mq-min(sm) {}
+// ==========================================================================
+@mixin mq-min($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// ==========================================================================
+// Anchos maximos (max-width) : @include mq-max(sm) {}
+// ==========================================================================
+@mixin mq-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// ==========================================================================
+// Anchos maximos / minimos (max-width and min-width) : @include mq-between(sm, md) {}
+// ==========================================================================
+@mixin mq-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) ==false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) ==false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+//@include orientation(landscape) 
+@mixin orientation($direction) { 
+
+  $orientation-landscape: "(orientation:landscape)"; 
+  $orientation-portrait: "(orientation:portrait)";
+
+  @if $direction == landscape {
+    @media #{$orientation-landscape} { @content; } 
+  }
+  @if $direction == portrait {
+    @media #{$orientation-portrait} { @content; } 
+  }
+} 
+
+// ==========================================================================
+// Mixins para la generación de los botones : @include button( ... );
+// ==========================================================================
+@mixin button($bg, $color: #ffffff) {
+  background: $bg;
+  color: $color;
+  position: relative;
+  &:hover {
+    color: $color;
+    transition: background 0.2s ease;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+  &.disabled,
+  &:disabled {
+    opacity: 0.55;
+    color: color(grayscale, 400);
+    background: color(grayscale, white);
+    border: 1px solid color(grayscale, 400);
+    box-shadow: none;
+    cursor: auto;
+    &:hover {
+      background: color(grayscale, white);
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// ==========================================================================
+// Mixins para la generación de los spaciados ( margins y paddings )
+// ==========================================================================
+@mixin list-spacing($className, $styleName) {
+  @each $name, $space in $sizes {
+    #{$className}-#{$name} {
+      #{$styleName}: $space;
+    }
+  }
+}
+
+// ==========================================================================
+// Mixins para la generación de los colores de los textos y backgrounds
+// ==========================================================================
+
+@mixin color-modifiers(
+  $attribute: "background",
+  $prefix: "-",
+  $separator: "-"
+) {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{$separator}#{"" + $tone} {
+          #{$attribute}: $hex;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// Mixins BEM selectors (Block, Element, Modifier)
+// ==========================================================================
+// Ej.: @include e(title) {}
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// Ej.: @include m(primary) {}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+@mixin prefix($property, $value, $prefixes: ()){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// ==========================================================================
+// Mixins para eliminar apariencia por defecto del navegador
+// ==========================================================================
+@mixin appearance($value) {
+  -webkit-appearance: ($value);
+  -moz-appearance: ($value);
+  -ms-appearance: ($value);
+  -o-appearance: ($value);
+  appearance: ($value);
+}
+
+// ==========================================================================
+// Mixins para eliminar apariencia por defecto del navegador
+// ==========================================================================
+// Funcion que define los colores del sistema basado en el mapa de colores establecido en las variables
+@function color($color, $tone) {
+  @if map-has-key($colors, $color) {
+    $color: map-get($colors, $color);
+    @if map-has-key($color, $tone) {
+      $tone: map-get($color, $tone);
+      @return $tone;
+    }
+  }
+}
+
+// ==========================================================================
+// Mixins placeholder
+// ==========================================================================
+@mixin placeholder($selector, $color, $fontWeight, $size) {
+  #{$selector}::-webkit-input-placeholder {
+    color: $color;
+    font-weight: $fontWeight;
+    $size: font-size;
+  }
+  #{$selector}::-moz-placeholder {
+    color: $color;
+    font-weight: $fontWeight;
+    $size: font-size;
+  }
+  #{$selector}:-ms-input-placeholder {
+    color: $color;
+    font-weight: $fontWeight;
+    $size: font-size;
+  }
+}
+
+// RGB to RGBA
+//example -> background-color: hex-to-rgba($color-3, 0.68);
+@function hex-to-rgba($color: #FFF, $opacity: 0.5) {
+  @return rgba(red($color), green($color), blue($color), $opacity);
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}

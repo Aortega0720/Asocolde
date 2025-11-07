@@ -1,0 +1,42 @@
+id: asocolderma_banner_home
+label: Asocolderma banner home migration
+migration_group: asocolderma
+
+source:
+  plugin: asocolderma_banner_home
+  node_type: banner_home
+  # The "target" here refers to the database connection where the source data lives.
+  # You will need to configure this database in your settings.php.
+  target: asocol_d7
+
+destination:
+  plugin: entity:banner_home
+
+process:
+  uid: node_uid
+  type:
+    plugin: default_value
+    default_value: banner_home
+  langcode:
+    plugin: default_value
+    default_value: es
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  field_status: status
+  title: title
+  created: created
+  changed: changed
+  'field_link/uri': field_url_enlace_uri
+  'field_link/title': title
+  'field_image/target_id': field_image_fid
+  'field_image/alt': field_image_alt
+  'field_image/title': field_image_title
+  'field_banner_location/target_id': field_ubicacion_del_banner_fid
+
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - asocol_migrate

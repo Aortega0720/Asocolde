@@ -1,0 +1,492 @@
+.view-articles{
+    &.view-display-id-page_clinics{
+        .views-row{
+            border-bottom: 1px solid var(--main-color);
+            padding: 1.6rem 0;
+            &:last-child{
+                border:0;
+            }
+        }  
+        .view-content {
+            .bs-region--right{
+                align-content: center;
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .field--name-node-post-date,
+            .field--name-field-type{
+                max-width: 50%;
+            }
+            .field--name-field-type{
+                font-family: $font-secondary;
+                font-size: 1.2rem;
+                margin:0;
+                text-transform: uppercase;
+            }
+            .field--name-node-post-date{
+                color:color(grayscale,400);
+                font-family: $font-primary;
+                font-size: 1.2rem;
+                padding-left: 1rem;
+                &:before{
+                    content: '|';
+                    margin-right: 1rem;
+                }
+            }
+            .field--name-node-title{
+                margin-top: 1rem;
+                width: 100%;
+                h2{
+                    font-family: $font-primary;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    a{
+                        &:hover{
+                            color:var(--main-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.view-articles{
+    &.view-display-id-page_academic {
+        .views-row{
+            border-bottom: 1px solid var(--main-color);
+            padding: 1.6rem 0;
+            &:last-child{
+                border:0;
+            }
+        } 
+    }
+}
+.view-patient-articles{
+    .row{
+        margin:0;
+        & > *{
+            margin:0;
+        }
+    }
+}
+.view-courses-virtual {
+    .views-row{
+        border-bottom: 1px solid var(--main-color);
+        padding: 1.6rem 0;
+    }
+    .node--type-course-virtual {
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        h2{
+            font-family: $font-secondary;
+            font-weight: normal;
+            max-width: 60%;
+            width: 100%;
+            a{
+                color:color(grayscale,black);
+                &:hover{
+                    color:var(--main-color);
+                }
+            }
+        }
+        .node__content{
+            width: 40%;
+            img{
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+div[class*="view-display-id-page_"]{
+    .views-row{
+        border-bottom: 1px solid var(--main-color);
+        padding: 1.6rem 0;
+        &:last-child{
+            border:0;
+        }
+    } 
+}
+.view-display-id-block_video_page,
+.view-display-id-block_gallery_page{
+    .views-row{
+        border-bottom: 1px solid var(--main-color);
+        padding: 2rem 0;
+        &:last-child{
+            border:0;
+        }
+        .layout--twocol-section {
+            align-items: center;
+        }
+        .field--name-node-title {
+            margin:1rem 0;
+            text-transform: uppercase;
+            h2{
+                font-size: 1.7rem;
+                line-height: inherit;
+                a{
+                    color:color(grayscale,black);
+                    &:hover,
+                    &:focus{
+                        color:var(--main-color);
+                    }
+                }
+            }
+        }
+        .field--name-field-tags{
+            background-color: #fff;
+            border-bottom: 1px #fff9f9;
+            padding: 15px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+            box-shadow: 0px 1px 5px 0px #cccccc;
+            width: 100%;
+        }
+        .field--name-node-link {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem 0 0 0;
+            a{
+                @extend %btn-outline-arrow-primary;
+                font-size: 1.3rem;
+                height: 3.1rem;
+                line-height: 3rem;
+                padding: 0 1rem;
+            }
+        }
+        .field--name-field-video,
+        .field--name-field-image{
+            position: relative;
+            a{
+                &:after{
+                    content: "\e914";
+                    color:color(grayscale,white);
+                    font-family: $font-icon;
+                    font-size: 4rem;
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            img{
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+        }
+        .field--name-field-video {
+            a{
+                &:after{
+                    content: "\e915";
+                }
+            }
+        }
+    }
+}
+.pagination{
+    .page-item {
+        &.is-active,
+        &.active{
+            .page-link{
+                z-index: 0;
+            }
+        }
+    }
+}
+.view-display-id-block_video_page{
+    .views-row{
+        .layout--twocol-section {
+            align-items: flex-start;
+        }
+    }
+}
+.view-top-skin-illness  {
+    border-bottom: 1px solid color(border,color-1);
+    border-top: 1px solid color(primary,500);
+    .group-top{
+        align-items: center;
+        border-bottom: 1px solid color(border,color-1);
+        display: flex;
+        justify-content: space-between;
+        padding: .3rem .6rem;
+        h2{
+            font-size: 1.4rem;
+            margin:0;
+        }
+        .more-link{
+            a{
+                @extend %btn-outline-arrow-primary;
+                font-size: 1.4rem;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+    }
+    .view-content{
+        counter-reset: counter;
+    }
+    .views-row{
+        border-bottom: 1px solid var(--main-color);
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        counter-increment: counter;
+        &:last-child{
+            border-bottom: 0;
+        }
+        .row{
+            align-items: center;
+        }
+        .field--name-field-image{
+            a{
+                display: block;
+                position: relative;
+                &:after{
+                    align-items: center;
+                    background: hex-to-rgba(color(primary,500),.6);
+                    border-radius: 100%;
+                    color:color(grayscale,white);
+                    content: counter(counter);
+                    display: flex;
+                    height: 3.5rem;
+                    font-weight: bold;
+                    font-size: 1.8rem;
+                    justify-content: center;
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 3.5rem;
+                }
+            }
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+        .bs-region--right{
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            .field--name-node-title,
+            .field--name-body{
+                width: 100%;
+            }
+            .field--name-node-title{
+                margin-top: .5rem;
+                h2{
+                    font-size: 1.4rem;
+                    line-height: inherit;
+                    text-transform: uppercase;
+                    a{
+                        color:color(grayscale,black);
+                        &:hover,
+                        &:focus{
+                            color:var(--main-color);
+                        }
+                    }
+                }
+            }
+            .field--name-body{
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+                p{
+                    margin:0;
+                }
+            }
+            .field--name-field-type{
+                border-right: 1px solid color(grayscale,400);
+                font-family: $font-secondary;
+                color:color(grayscale,400);
+                font-size: 1.2rem;
+                line-height: 2rem;
+                margin-right: 1rem;
+                padding-right: 1rem;
+                text-transform: uppercase;
+            }
+            .field--name-node-post-date{
+                color:color(grayscale,400);
+                font-size: 1.2rem;
+                margin-bottom: .2rem;
+            }
+            .field--name-field-tags {
+                .field__items,
+                .field__item,
+                .field__label{
+                    display: inline;
+                    a{
+                        color:color(grayscale,black);
+                    }
+                }
+            }
+        }
+    }
+}
+.block--type-newspaper,
+.block-views-blockarticles-block-slider-academic,
+.block-views-blockarticles-block-slider-gremial,
+.block-views-blockpatient-articles-block-slider-asocolderma,
+.block-views-blockarticles-block-slider-gallery,
+.block-views-blockarticles-block-slider-videos,
+.block-views-blockpatient-articles-block-slide-articles-other{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.6rem;
+    overflow: hidden;
+    .view-articles,
+    .view-patient-articles{
+        margin-bottom: 0;
+        .view-content{
+            padding: 0;
+        }
+    }
+}
+.block-views-blockpatient-articles-block-slider-asocolderma,
+.block-views-blockarticles-block-slider-academic,
+.block-views-blockarticles-block-slider-videos{
+    background: color(primary,100);
+}
+.block--type-newspaper{
+    .field--name-field-link{
+        position: absolute;
+        right: .5rem;
+        top: 0.5rem;
+        a{
+            @extend %btn-outline-arrow-primary;
+            font-size: 1.4rem;
+            padding: .4rem;
+            padding-bottom: .2rem;
+        }
+    }
+}
+.view-taxonomy-term{
+    .views-row{
+        background-color: color(backgrounds,200);
+        border-bottom: 1px solid var(--main-color);
+        padding: 10px 15px;
+        .row{
+            align-items: center;
+        }
+    }
+    .bs-region--left{
+        width: 118px;
+    }
+    .bs-region--right{
+        width: calc(100% - 118px);
+    }
+    .field--name-field-image {
+        img{
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+    }
+    .field--name-node-post-date{
+        font-size: 1.2rem;
+        &:before{
+            content: "\e939";
+            font-family: $font-icon;
+            font-size: 1.5rem;
+            margin-right: .5rem;
+            vertical-align: middle;
+        }
+    }
+    .field--name-node-title,
+    .field--name-node-title-external-link {
+        h2{
+            font-size: 1.6rem;
+            line-height: 2rem;
+        }
+    }
+}
+main {
+    .body-content{
+        .view-comite-editorial{
+            .bs-region--left{
+                width: 120px;
+            }
+            .bs-region--right{
+                padding-left: 3rem;
+                width: calc(100% - 120px);
+            }
+            .views-row{
+                border-bottom: 1px solid var(--main-color);
+                padding: 2rem;
+                &:last-child{
+                    border-bottom: 0;
+                }
+                .views-row{
+                    border:0;
+                    padding: 0;
+                }
+            }
+            .user--type-user {
+                align-items: center;
+                .field--name-user-picture {
+                    border:5px solid var(--main-color);
+                    border-radius: 100%;
+                    height: 120px;
+                    margin:0;
+                    padding: 0;
+                    width: 120px;
+                }
+                .info-dr,
+                .field--name-field-medicine-school,
+                .field--name-field-university-degree{
+                    text-align: left;
+                }
+                .field--name-field-university-degree{
+                    font-size: 1.7rem;
+                    margin-top: 2rem;
+                    margin-bottom: .5rem;
+                }
+                .field--name-field-medicine-school{
+                    margin-bottom: .5rem;
+                }
+                .field--name-field-profile{
+                    margin-top: .5rem;
+                }
+                .field--name-user-link {
+                    margin-top: 1rem;
+                    a{
+                        @extend %btn-outline-arrow-primary;
+                        padding: .2rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mq-max(md){
+    main{
+        .body-content {
+            .view-comite-editorial {
+                .user--type-user{
+                    flex-direction: column;
+                    .bs-region--left{
+                        margin-bottom: 1.6rem;
+                        padding: 0;
+                    }
+                    .bs-region--right{
+                        padding-left: 0;
+                        width: 100%;
+                    }
+                    .info-dr{
+                        text-align: center;
+                    }
+                    .field--name-user-link {
+                        margin-top: 2.5rem;
+                        a{
+                            text-align: center;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

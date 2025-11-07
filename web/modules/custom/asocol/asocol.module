@@ -1,0 +1,232 @@
+<?php
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function asocol_entity_type_alter(array &$entity_types) {
+  $default_handler_class = $entity_types['user']->getHandlerClasses()['form']['default'];
+  $entity_types['user']->setFormClass('private', $default_handler_class);
+  $entity_types['user']->setFormClass('public', $default_handler_class);
+  $entity_types['user']->setFormClass('services', $default_handler_class);
+  $entity_types['user']->setFormClass('configuration', $default_handler_class);
+}
+
+/**
+ * Implements hook_views_pre_view().
+ *
+ */
+function asocol_views_pre_view(Drupal\views\ViewExecutable $view, $display_id, array &$args) {
+  $views = _get_views_alphablet();
+  if(in_array($view->id(), array_keys($views)) &&
+    in_array($view->current_display, array_keys($views[$view->id()]))) {
+    $args = [];
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_summary_unformatted().
+ *
+ */
+function asocol_preprocess_views_view_summary_unformatted(&$variables) {
+  $view = $variables['view'];
+
+  $views = _get_views_alphablet();
+  if(in_array($view->id(), array_keys($views)) &&
+    in_array($view->current_display, array_keys($views[$view->id()]))) {
+
+    $alphablet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','U','V','W','X','Y','Z'];
+    $rows = [];
+    foreach($alphablet as $key => $letter) {
+      $isFound = false;
+      foreach($variables['rows'] as $key_row => $row) {
+        if($row->link == $letter) {
+          $rows[] = $row;
+          if($letter != 'A') {
+            $row->separator = ' | ';
+          }
+          $isFound = true;
+          break;
+        }
+      }
+      if(!$isFound) {
+        $row_empty = new stdClass();
+        $row_empty->link = $letter;
+        if($letter != 'A') {
+          $row_empty->separator = ' | ';
+        }
+        $rows[] = $row_empty;
+      }
+    }
+    $row_all = new stdClass();
+    $row_all->link = 'Todo';
+    $row_all->url = $views[$view->id()][$view->current_display]['url_all'];
+    $row_all->separator = ' | ';
+    $rows[] = $row_all;
+
+    $variables['rows'] = $rows;
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ */
+function asocol_form_views_exposed_form_alter(&$form, &$form_state, $id) {
+  $view = $form_state->getStorage('view');
+  if (($view['view']->id() == 'dermatologists') && ($view['view']->current_display == 'page')) {
+    $form['ciudad']['#options']['All'] = 'Todas las ciudades';
+    $form['especialidad']['#options']['All'] = 'Todos';
+    $form['recertificado']['#options'] = [
+      'All' => 'Todos los dermatólogos',
+      '1' => 'Únicamente los Re-Certificados',
+    ];
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ */
+function asocol_form_webform_submission_newsletter_form_alter(&$form, &$form_state, $id) {
+  $form['elements']['term_condition']['#title'] = $form['elements']['term_condition']['#description'];
+  unset($form['elements']['term_condition']['#description']);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ */
+function asocol_form_notification_notification_form_alter(&$form, &$form_state, $id) {
+  $form['actions']['submit']['#submit'][] = 'asocol_notification_submit';
+}
+
+function asocol_notification_submit($form, Drupal\Core\Form\FormStateInterface $form_state) {
+  $form_state->setRedirect('view.admin_notifications.page_1');
+}
+
+/**
+ * Implements hook_block_view_alter().
+ *
+ */
+function asocol_block_content_view_alter(array &$build,  Drupal\block_content\Entity\BlockContent $block) {
+  if ($block->bundle() == 'prehome') {
+     $build['#attached']['library'][] = 'core/drupal.dialog.ajax';
+  }
+}
+
+/**
+ * Implements hook_block_view_alter().
+ *
+ */
+function asocol_block_view_alter(array &$build, Drupal\Core\Block\BlockPluginInterface $block) {
+  if($block->getPluginId() == 'revive_adserver_zone_block') {
+    $build['#configuration']['label'] = 'Publicidad';
+    $build['#configuration']['label_display'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function asocol_theme($existing, $type, $theme, $path) {
+  return [
+    'asocol_modal_login' => [
+      'variables' => [
+        'form' => NULL,
+      ],
+    ],
+    'asocol_tabs' => [
+      'variables' => [
+        'id' => NULL,
+        'items' => [],
+      ],
+    ],
+    'asocol_tools' => [
+      'variables' => [
+      ],
+    ],
+    'asocol_tools_user' => [
+      'variables' => [
+      ],
+    ],
+    'user_menu_list' => [
+      'variables' => [
+        'picture' => NULL,
+        'fullname' => NULL,
+        'menu' => NULL,
+      ],
+    ],
+    'user_notifications' => [
+      'variables' => [
+        'icon' => NULL,
+        'list' => NULL,
+      ],
+    ],
+    'certification_page' => [
+      'variables' => [
+        'items' => [],
+        'points' => 0,
+      ],
+    ],
+    'membership_page' => [
+      'variables' => [
+        'status' => NULL,
+        'list' => NULL,
+      ],
+    ],
+    'elements__bootstrap_options_buttons' => [
+      'render element' => 'element',
+    ],
+    'asocol_order_complete' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function asocol_form_user_login_form_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#submit'][] = 'asocol_user_login_form_submit';
+}
+
+/**
+ * Custom submit handler for the login form.
+ */
+function asocol_user_login_form_submit($form, Drupal\Core\Form\FormStateInterface $form_state) {
+  $url = Drupal\Core\Url::fromUri('internal:/dermatologos');
+  $form_state->setRedirectUrl($url);
+}
+
+/**
+ * Implements hook_ds_fields_info_alter().
+ */
+function asocol_ds_fields_info_alter(array &$plugins) {
+  if (isset($plugins['node_post_date'])) {
+    $plugins['node_post_date']['class'] = 'Drupal\asocol\Plugin\DsField\NodePostDate';
+  }
+}
+
+/**
+ * Implements hook_commerce_checkout_pane_info_alter().
+ */
+function asocol_commerce_checkout_pane_info_alter(&$definitions) {
+  if (isset($definitions['order_summary'])) {
+    $definitions['order_summary']['wrapper_element'] = 'fieldset';
+  }
+}
+
+function _get_views_alphablet() {
+  return [
+    'dermatologists' => [
+      'attachment' => [
+        'url_all' => '/directorio-dermatologos',
+      ],
+    ],
+    'skin_illness' => [
+      'attachment' => [
+        'url_all' => '/enfermedades-de-la-piel',
+      ],
+    ],
+  ];
+}

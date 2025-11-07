@@ -1,0 +1,10 @@
+{%
+  set classes = [
+    'form-check-input'
+  ]
+%}
+<div class="form-check form-switch">
+  <label class="form-check-label" for="{{ element['#id'] }}">{{ element['#title'] }}</label>
+  <input{{ attributes.addClass(classes) }} id="{{ element['#id'] }}">
+</div>
+{{ children }}

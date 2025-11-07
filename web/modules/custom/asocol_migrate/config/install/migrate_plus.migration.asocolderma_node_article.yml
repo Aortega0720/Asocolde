@@ -1,0 +1,70 @@
+id: asocolderma_node_article
+label: Asocolderma node articles migration
+migration_group: asocolderma
+
+source:
+  plugin: asocolderma_node_article
+  node_type: contenido
+  # The "target" here refers to the database connection where the source data lives.
+  # You will need to configure this database in your settings.php.
+  target: asocol_d7
+
+destination:
+  plugin: entity:node
+
+process:
+  uid: node_uid
+  type:
+    plugin: default_value
+    default_value: article
+  langcode:
+    plugin: default_value
+    default_value: es
+  status: status
+  title: title
+  created: created
+  changed: changed
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  field_note_type: field_tipo_de_nota
+  'field_image/target_id': field_image_fid
+  'field_image/alt': field_image_alt
+  'field_image/title': field_image_title
+  body: body
+  field_type/target_id: field_categoria_tid
+  field_disease_type:
+    plugin: sub_process
+    source: field_tipo_enfermedad
+    process:
+      target_id: tid
+  field_tags:
+    plugin: sub_process
+    source: field_tags
+    process:
+      target_id: tid
+  field_source: field_fuente
+  field_home_location:
+    plugin: sub_process
+    source: field_ubicacion_en_el_home
+    process:
+      target_id: tid
+
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - asocol_migrate
