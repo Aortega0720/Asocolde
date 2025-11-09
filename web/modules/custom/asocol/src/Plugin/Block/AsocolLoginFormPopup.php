@@ -3,14 +3,14 @@
 namespace Drupal\asocol\Plugin\Block;
 
 use Drupal\Core\Url;
-use \Drupal\Core\Link;
+use Drupal\Core\Link;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides login from popup.
+ * Provides login form popup block.
  *
  * @Block(
  *   id = "asocol_login_form_popup",
@@ -20,28 +20,26 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class AsocolLoginFormPopup extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Stores the current logged in user or anonymous account.
+   * The current logged-in user or anonymous account.
    *
    * @var \Drupal\Core\Session\AccountProxyInterface
    */
-  protected $currentAccount;
+  protected AccountProxyInterface $currentUser;
 
   /**
-   * Constructs an AggregatorFeedBlock object.
+   * Constructs an AsocolLoginFormPopup block object.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
+   *   The plugin ID for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Session\AccountProxyInterface $current_account
-   *   An instance of the current logged in user or anonymous account.
-   *   The session manager service.
+   * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+   *   The current user session.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,  AccountProxyInterface $current_user) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountProxyInterface $current_user) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-
     $this->currentUser = $current_user;
   }
 
@@ -62,24 +60,29 @@ class AsocolLoginFormPopup extends BlockBase implements ContainerFactoryPluginIn
    */
   public function build() {
     $build = [];
-    if($this->currentUser->isAnonymous()) {
+
+    // Mostrar enlace de login solo a usuarios anónimos.
+    if ($this->currentUser->isAnonymous()) {
       $url = Url::fromRoute('user.login');
-      $link_options = [
+      $url->setOptions([
         'attributes' => [
-          'class' => [
-            'use-ajax',
-            'login-popup-form',
-          ],
+          'class' => ['use-ajax', 'login-popup-form'],
           'data-dialog-type' => 'modal',
         ],
+      ]);
+
+      $link = Link::fromTextAndUrl($this->t('Ingreso Asociados'), $url)->toString();
+
+      $build['login_popup_block'] = [
+        '#markup' => '<div class="login-popup-link">' . $link . '</div>',
+        '#attached' => [
+          'library' => ['core/drupal.dialog.ajax'],
+        ],
       ];
-      $url->setOptions($link_options);
-      $link = Link::fromTextAndUrl('Ingreso Asociados', $url)->toString();
-      $build['login_popup_block']['#markup'] = '<div class="Login-popup-link">' . $link . '</div>';
-      $build['login_popup_block']['#attached']['library'][] = 'core/drupal.dialog.ajax';
     }
 
     return $build;
   }
 
 }
+
