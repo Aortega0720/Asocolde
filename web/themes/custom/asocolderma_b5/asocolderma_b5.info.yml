@@ -2,13 +2,17 @@ name: Asocolderma B5
 type: theme
 description: 'asocolderma_B5 subtheme based on Bootstrap 5 theme.'
 core_version_requirement: '^9.4 || ^10'
-'base theme': bootstrap5
+base theme: bootstrap5
+
 libraries:
   - asocolderma_b5/global-styling
+
 ckeditor_stylesheets:
   - css/style.css
+
 ckeditor5-stylesheets:
   - css/ck5style.css
+
 regions:
   header_scroll: Scroll Header
   header: Header
@@ -29,7 +33,4 @@ regions:
   footer_bottom_left: Footer Bottom Left
   footer_bottom_right: Footer Bottom Right
   footer_ads: Footer Ads
-bootstrap5/global-styling:
-  css:
-    theme:
-      css/style.css: 'false'
+
