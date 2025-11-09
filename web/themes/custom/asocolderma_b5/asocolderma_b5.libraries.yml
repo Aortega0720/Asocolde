@@ -1,7 +1,7 @@
 global-styling:
   css:
     theme:
-      css/style.css: {}
-      css/style-asocolderma.css: {}
+      css/style.css: { weight: -10 }
+      css/style-asocolderma.css: { weight: 10 }
   js:
     assets/js/custom.js: {}
